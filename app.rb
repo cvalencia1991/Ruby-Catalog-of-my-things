@@ -1,5 +1,5 @@
 class App
-    def initialize
-        
-    end
+  def initialize(_notemptyclass)
+    @notemptyclass
+  end
 end
