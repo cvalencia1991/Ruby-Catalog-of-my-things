@@ -1,9 +1,9 @@
 require 'date'
 
-class ClassName
-  def initialize(id, date, archived: true)
-    @id = id
-    @publish_date = date
+class Item
+  def initialize(id, date, archived: false)
+    @id = id.nil? ? Random.rand(1..1000) : id
+    @publish_date = Date.parse(date)
     @archived = archived
   end
   attr_writer :genre, :author, :label
