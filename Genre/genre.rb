@@ -1,8 +1,7 @@
 require '../item'
 
 class Genre < Item
-
-    attr_reader :item
+  attr_reader :item
 
   def initialize(name, genre)
     super(genre)
@@ -13,5 +12,4 @@ class Genre < Item
   def self.add_item
     @items << genre
   end
-
 end
