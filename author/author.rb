@@ -1,13 +1,15 @@
-require_relative '../items'
-
 class Author
-  def initialize(first_name, last_name)
+  attr_accessor :first_name, :last_name, :id, :items
+
+  def initialize(first_name, last_name, id)
     @first_name = first_name
     @last_name = last_name
+    @id = id
+    @items = []
   end
-  attr_reader :first_name, :last_name
 
   def add_item(item)
-    @items.push(item)
+    @items.push(item) unless @items.include?(item)
+    item.add_author(self) unless item.authors.include?(self)
   end
 end
