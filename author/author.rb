@@ -1,5 +1,5 @@
 class Author
-  attr_accessor :first_name, :last_name, :id, :items
+  attr_accessor :first_name, :last_name, :id, :item
 
   def initialize(first_name, last_name, id)
     @first_name = first_name

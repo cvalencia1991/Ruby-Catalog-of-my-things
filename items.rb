@@ -5,7 +5,9 @@ class Item
     @id = id.nil? ? Random.rand(1..1000) : id
     @publish_date = Date.parse(date)
     @archived = archived
+    @author = nil
   end
+  attr_reader :id, :publish_date, :archived
   attr_writer :genre, :author, :label
 
   def can_be_archived?
@@ -18,5 +20,12 @@ class Item
 
   def move_to_archive
     @archived = true if can_be_archived?
+  end
+
+  def add_author(author)
+    @author = author
+    return if author.nil?
+
+    author.items.push(self)
   end
 end
