@@ -1,15 +1,16 @@
 require '../item'
 
-class Genre < Item
-  attr_reader :item
+class Genre
+  attr_reader :id
+  attr_accessor :name, :items
 
-  def initialize(name, genre)
-    super(genre)
+  def initialize(name, id:nil)
+    @id = id.nil? ? Random.rand(1..1000) : id
     @name = name.to_s unless name.is_a? String
     @items = []
   end
 
-  def self.add_item
-    @items << genre
+  def add_item(item)
+    item.genre = self
   end
 end
