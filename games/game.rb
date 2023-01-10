@@ -16,7 +16,7 @@ class Game < Item
   def can_be_archived?
     current_date = Date.today
     year = current_date.year - @publish_date.year
-    return true if year > 10
+    return true if year > 2
 
     false
   end
