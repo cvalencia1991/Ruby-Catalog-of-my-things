@@ -1,7 +1,8 @@
 include '../items'
 
 class MusicAlbum < Item
-  attr_reader :archived, :date, :id
+  attr_reader :id
+  attr_accessor :on_spotify
 
   def initialize(id, on_spotify, date, archived: false)
     super(id, date, archived: archived)
