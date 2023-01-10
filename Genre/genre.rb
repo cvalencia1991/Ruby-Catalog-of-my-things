@@ -10,7 +10,7 @@ class Genre
     @items = []
   end
 
-  def add_item(item)
+  def add_item(_item)
     @item.genre = self
   end
 end
