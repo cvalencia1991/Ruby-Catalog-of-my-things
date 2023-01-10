@@ -1,18 +1,17 @@
 include '../items'
-include '../Genre/genre'
 
-class MusicAlbum < Genre
-  attr_reader :archived
+class MusicAlbum < Item
+  attr_reader :archived,:date, :id
 
-  def initialize(on_spotify: true)
+  def initialize(id, date, archived: false)
+    super(id, date, archived: archived)
     @on_spotify = on_spotify
-    super(archived)
   end
 
   private
 
   def can_be_archived?
-    true if @archived == true && @on_spotify == true
+    super && @on_spotify == true
     false
   end
 end
