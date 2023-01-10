@@ -1,6 +1,7 @@
 include '../items'
+include '../Genre/genre'
 
-class MusicAlbum
+class MusicAlbum < Genre
   attr_reader :archived
 
   def initialize(on_spotify: true)
