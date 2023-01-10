@@ -1,4 +1,4 @@
-require '../item'
+require '../items'
 
 class Genre
   attr_reader :id
