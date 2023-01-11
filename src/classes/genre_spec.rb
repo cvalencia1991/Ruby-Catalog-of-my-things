@@ -1,4 +1,5 @@
 require_relative 'genre'
+require_relative 'items'
 require 'rspec'
 
 describe Genre do
