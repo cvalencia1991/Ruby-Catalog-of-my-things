@@ -1,4 +1,4 @@
-require_relative './genremethod.rb'
+require_relative './genremethod'
 module Methodmusic
   include Genremethod
   def add_music_album
@@ -11,10 +11,10 @@ module Methodmusic
     case option
     when 'y'
       archived = true
-      @musicalbums.push(Item.new(album, date, archived))
+      @musicalbums.push(MusicAlbum.new(archived, album, date))
     when 'n'
       archived = false
-      @musicalbums.push(Item.new(album, date, archived))
+      @musicalbums.push(MusicAlbum.new(archived, album, date))
     else
       puts 'Invalid typing, please enter number again!'
     end
@@ -22,6 +22,6 @@ module Methodmusic
   end
 
   def list_all_music_albums
-    @musicalbums.each { |info| p info }
+    @musicalbums.each { |num| p num }
   end
 end
