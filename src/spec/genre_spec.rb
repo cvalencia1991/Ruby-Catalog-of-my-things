@@ -21,9 +21,8 @@ describe Genre do
       expect(result).to eq(5)
     end
 
-    let(:item) { Item.new('archived', DateTime.now.to_s) }
-
     it 'add random item' do
+      item = Item.new('archived', DateTime.now.to_s)
       genre = Genre.new('cesar', id: 10)
       genre.add_item(item)
       expect(genre.items).to include(item)
