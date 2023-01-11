@@ -1,4 +1,4 @@
 # require_relative '../items.rb'
-require_relative '../src/classes/book'
-require_relative '../src/classes/label'
+require_relative '../classes/book'
+require_relative '../classes/label'
 require 'date'
