@@ -1,5 +1,5 @@
-require_relative '../classes/musicalbum.rb'
-require_relative '../classes/items.rb'
+require_relative '../classes/musicalbum'
+require_relative '../classes/items'
 require 'rspec'
 
 RSpec.describe MusicAlbum do

@@ -1,5 +1,5 @@
 require_relative '../classes/genre'
-require_relative '../classes/items.rb'
+require_relative '../classes/items'
 require 'rspec'
 
 describe Genre do
