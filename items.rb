@@ -9,6 +9,8 @@ class Item
     @archived = archived
   end
  
+  private
+
   def can_be_archived?
     current_date = Date.today
     year = current_date.year - @publish_date.year
@@ -16,6 +18,8 @@ class Item
 
     true 
   end
+
+  public
 
   def move_to_archive
     @archived = true if self.can_be_archived?
