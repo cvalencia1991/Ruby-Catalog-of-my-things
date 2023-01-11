@@ -1,4 +1,4 @@
-require_relative 'genremethod.rb'
+require_relative 'genremethod'
 module Methodmusic
   include Genremethod
   def add_music_album
