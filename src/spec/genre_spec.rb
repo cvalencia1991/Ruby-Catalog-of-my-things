@@ -20,7 +20,7 @@ describe Genre do
     end
 
     it 'add random item' do
-      item = Item.new(30, DateTime.now.to_s, true)
+      item = Item.new(true, '2022-02-01')
       genre = Genre.new('cesar', id: 10)
       genre.add_item(item)
       expect(genre.items).to include(item)

@@ -24,7 +24,7 @@ module Methodmusic
 
   def list_all_music_albums
     @musicalbums.each_with_index do |alb, idx|
-      print "#{idx})  Album: #{alb.album_name}"
+      print "#{idx}) #{alb.publish_date}  Album: #{alb.album_name}"
     end
   end
 end
