@@ -16,6 +16,7 @@ class Genre
   end
 
   private
+
   def generate_id
     rand(1..1000)
   end

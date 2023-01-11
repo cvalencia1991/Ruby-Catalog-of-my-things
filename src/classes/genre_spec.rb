@@ -1,5 +1,5 @@
-require_relative 'genre.rb'
-require_relative 'items.rb'
+require_relative 'genre'
+require_relative 'items'
 require 'rspec'
 
 describe Genre do
@@ -21,10 +21,10 @@ describe Genre do
       expect(result).to eq(5)
     end
 
-    let(:item) { Item.new("archived",DateTime.now.to_s) }
+    let(:item) { Item.new('archived', DateTime.now.to_s) }
 
     it 'add random item' do
-      genre = Genre.new("cesar", id:10)
+      genre = Genre.new('cesar', id: 10)
       genre.add_item(item)
       expect(genre.items).to include(item)
     end
