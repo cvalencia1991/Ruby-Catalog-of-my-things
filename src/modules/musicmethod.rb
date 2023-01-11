@@ -2,15 +2,17 @@ module Methodmusic
   def add_music_album
     puts 'name of the album: '
     album = gets.chomp.to_s
+    puts 'Date of the album [yyyy-mm-dd]: '
+    date = gets.chomp
     puts 'you want to archive [y-n] : '
     option = gets.chomp.to_s
     case option
     when 'y'
       archived = true
-      @musicalbum.push(Item.new(album, Date.strptime(date, '%m/%d/%Y'), archived))
+      @musicalbums.push(Item.new(album, date, archived))
     when n
       archived = false
-      @musicalbum.push(Item.new(album, Date.strptime(date, '%m/%d/%Y'), archived))
+      @musicalbums.push(Item.new(album, date, archived))
     else
       puts 'Invalid typing, please enter number again!'
     end
@@ -22,13 +24,13 @@ module Methodmusic
     case condition
     when 'y'
       on_spotify = true
-      @musicalbum.push(MusicAlbum.new(on_spotify))
+      @genre.push(MusicAlbum.new(on_spotify, date))
     when 'n'
       on_spotify = false
-      @musicalbum.push(MusicAlbum.new(on_spotify))
+      @genre.push(MusicAlbum.new(on_spotify, date))
     else
       puts 'Invalid typing, please enter number again!'
     end
-    puts 'Music Album created successfully 📚'
+    puts 'Music Album and Genre created successfully 📚'
   end
 end
