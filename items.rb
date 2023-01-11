@@ -8,7 +8,7 @@ class Item
     @publish_date = Date.parse(date)
     @archived = archived
   end
- 
+
   private
 
   def can_be_archived?
@@ -16,12 +16,12 @@ class Item
     year = current_date.year - @publish_date.year
     return false if year < 10
 
-    true 
+    true
   end
 
   public
 
   def move_to_archive
-    @archived = true if self.can_be_archived?
+    @archived = true if can_be_archived?
   end
 end

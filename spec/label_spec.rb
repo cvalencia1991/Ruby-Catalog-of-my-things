@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Label do
-
   before :each do
     @label = Label.new('Fundamental of Physics', 'cyan', id: rand(1..1000))
     @item = Item.new(1, '2023/01/12')
@@ -20,7 +19,7 @@ describe Label do
       @label.add_item(@item)
       expect(@label.items.length).to eql 1
     end
-    
+
     it 'should add item to the items aray' do
       @label.add_item(@item)
       expect(@label.items[0]).to eql @item

@@ -1,4 +1,4 @@
-require_relative '../../items.rb'
+require_relative '../../items'
 
 class Book < Item
   attr_accessor :publisher, :cover_state
@@ -10,7 +10,7 @@ class Book < Item
   end
 
   private
-  
+
   def can_be_archived?
     super || @cover_state == 'bad'
   end

@@ -1,4 +1,4 @@
-require_relative '../../items.rb'
+require_relative '../../items'
 
 class Label
   attr_accessor :title, :author, :items
