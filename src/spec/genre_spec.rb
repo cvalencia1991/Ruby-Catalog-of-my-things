@@ -1,6 +1,5 @@
-require_relative '../classes/genre'
-require_relative '../classes/items'
-require 'rspec'
+
+require_relative './spec_helper'
 
 describe Genre do
   describe 'class' do
