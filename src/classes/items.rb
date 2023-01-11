@@ -1,22 +1,26 @@
 require 'date'
 
 class Item
+  attr_accessor :genre, :author, :label, :archived, :publish_date
+
   def initialize(id, date, archived: false)
     @id = id.nil? ? Random.rand(1..1000) : id
     @publish_date = Date.parse(date)
     @archived = archived
     @author = nil
   end
-  attr_reader :id, :publish_date, :archived
-  attr_writer :genre, :author, :label
+
+  private
 
   def can_be_archived?
     current_date = Date.today
     year = current_date.year - @publish_date.year
-    return true unless year > 10
+    return false if year < 10
 
-    false
+    true
   end
+
+  public
 
   def move_to_archive
     @archived = true if can_be_archived?
