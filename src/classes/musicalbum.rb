@@ -1,4 +1,4 @@
-include '../items'
+require_relative 'items'
 
 class MusicAlbum < Item
   attr_reader :id
