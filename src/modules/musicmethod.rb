@@ -2,7 +2,7 @@ require_relative './genremethod'
 module Methodmusic
   include Genremethod
   def add_music_album
-    print 'add name of the album: '
+    print 'Name of the album: '
     album = gets.chomp.to_s
     print 'Date of the album [yyyy-mm-dd]: '
     date = gets.chomp
@@ -23,8 +23,9 @@ module Methodmusic
   end
 
   def list_all_music_albums
+    puts "No Album  Date"
     @musicalbums.each_with_index do |alb, idx|
-      print "#{idx}) #{alb.publish_date}  Album: #{alb.album_name}"
+      print "#{idx})  Album: #{alb.album_name} Date:#{alb.publish_date} "
     end
   end
 end
