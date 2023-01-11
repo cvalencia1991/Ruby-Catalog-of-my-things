@@ -23,7 +23,7 @@ module Methodmusic
   end
 
   def list_all_music_albums
-    puts "No Album  Date"
+    puts 'No Album  Date'
     @musicalbums.each_with_index do |alb, idx|
       print "#{idx})  Album: #{alb.album_name} Date:#{alb.publish_date} "
     end
