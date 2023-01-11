@@ -1,11 +1,13 @@
 require 'colorize'
 require './src/modules/musicmethod'
+require './src/modules/genremethod'
 require './src/classes/musicalbum'
 require './src/classes/items'
 require './src/classes/genre'
-require 'date'
+
 class App
   include Methodmusic
+  include Genremethod
 
   def initialize
     @genre = []
@@ -51,7 +53,7 @@ class App
     when 1 # list_all_books
     when 2 then list_all_music_albums
     when 3 # list_all_games
-    when 4 # list_all_genres
+    when 4 then list_all_genres
     when 5 # list_all_labels
     when 6 # list_authors
     end

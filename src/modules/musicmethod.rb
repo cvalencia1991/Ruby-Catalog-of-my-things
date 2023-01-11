@@ -2,11 +2,11 @@ require_relative './genremethod'
 module Methodmusic
   include Genremethod
   def add_music_album
-    puts 'name of the album: '
+    print 'add name of the album: '
     album = gets.chomp.to_s
-    puts 'Date of the album [yyyy-mm-dd]: '
+    print 'Date of the album [yyyy-mm-dd]: '
     date = gets.chomp
-    puts 'you want to archive [y-n] : '
+    print 'you want to archive [y-n] : '
     option = gets.chomp.to_s
     case option
     when 'y'
@@ -18,10 +18,13 @@ module Methodmusic
     else
       puts 'Invalid typing, please enter number again!'
     end
-    puts 'Music Album and Genre created successfully 📚'
+    puts 'Music Album created successfully 📚'
+    genremethod
   end
 
   def list_all_music_albums
-    @musicalbums.each { |num| p num }
+    @musicalbums.each_with_index do |alb, idx|
+      print "#{idx})  Album: #{alb.album_name}"
+    end
   end
 end

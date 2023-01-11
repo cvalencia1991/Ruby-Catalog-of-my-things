@@ -6,7 +6,7 @@ class Genre
 
   def initialize(name, id: nil)
     @id = id.nil? ? generate_id : id
-    @name = name.to_s
+    @name = name
     @items = []
   end
 
