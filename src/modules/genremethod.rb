@@ -16,4 +16,8 @@ module Genremethod
       puts 'Invalid typing, please enter number again!'
     end
   end
+
+  def list_all_genres
+    @genre.each { |info| print info }
+  end
 end

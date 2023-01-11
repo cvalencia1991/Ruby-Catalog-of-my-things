@@ -1,4 +1,4 @@
-require_relative 'genremethod'
+require_relative './genremethod.rb'
 module Methodmusic
   include Genremethod
   def add_music_album
@@ -19,6 +19,9 @@ module Methodmusic
       puts 'Invalid typing, please enter number again!'
     end
     puts 'Music Album and Genre created successfully 📚'
-    genremethod
+  end
+
+  def list_all_music_albums
+    @musicalbums.each { |info| p info }
   end
 end
