@@ -2,8 +2,6 @@ require_relative 'musicalbum'
 require_relative 'items'
 require 'rspec'
 
-
-
 RSpec.describe MusicAlbum do
   describe '#initialize' do
     it 'intilize on_spotify' do
