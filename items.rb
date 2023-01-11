@@ -1,7 +1,7 @@
 require 'date'
 
 class Item
-  attr_accessor :genre, :author, :label
+  attr_accessor :genre, :author, :label, :archived
 
   def initialize(id, date, archived: false)
     @id = id.nil? ? Random.rand(1..1000) : id
