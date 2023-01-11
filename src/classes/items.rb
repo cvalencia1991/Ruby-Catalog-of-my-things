@@ -1,7 +1,7 @@
 require 'date'
 
 class Item
-  def initialize(id, date, archived: false)
+  def initialize(id, date, archived)
     @id = id.nil? ? Random.rand(1..1000) : id
     @publish_date = Date.parse(date)
     @archived = archived

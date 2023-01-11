@@ -9,7 +9,7 @@ describe Genre do
       expect(genre.name).to eq('cesar')
     end
 
-    it 'creates a new Genre name' do
+    it 'items of genre are empty' do
       genre = Genre.new('cesar')
       expect(genre.items).to eq([])
     end

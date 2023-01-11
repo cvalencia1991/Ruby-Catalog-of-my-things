@@ -1,6 +1,17 @@
 require 'colorize'
-
+require './src/modules/musicmethod'
+require './src/classes/musicalbum'
+require './src/classes/items'
+require './src/classes/genre'
+require 'date'
 class App
+  include Methodmusic
+
+  def initialize
+    @genre = []
+    @musicalbums = []
+  end
+
   def show_menu
     puts "\nPlease choose an option by entering a number from below 👇: \n\n".yellow.underline
     puts '[ 1 ] - List all books'.cyan
@@ -38,7 +49,7 @@ class App
   def list_items(user_choice)
     case user_choice
     when 1 # list_all_books
-    when 2 # list_all_music_albums
+    when 2 then list_all_music_albums
     when 3 # list_all_games
     when 4 # list_all_genres
     when 5 # list_all_labels
@@ -50,7 +61,7 @@ class App
   def add_items(user_choice)
     case user_choice
     when 7 # create_book
-    when 8 # add_music_album
+    when 8 then add_music_album
     when 9 # add_game
     end
     show_menu
