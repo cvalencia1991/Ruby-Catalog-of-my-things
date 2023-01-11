@@ -22,10 +22,10 @@ class Item
     @archived = true if can_be_archived?
   end
 
-  def add_author(author)
-    @author = author
-    return if author.nil?
+#   def add_author(author)
+#     @author = author
+#     return if author.nil?
 
-    item.add_author(self) unless item.authors.include?(self)
-  end
+#     item.add_author(self) unless item.authors.include?(self)
+#   end
 end
