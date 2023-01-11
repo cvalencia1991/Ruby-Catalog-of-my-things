@@ -9,14 +9,8 @@ class Game < Item
     @last_played_date = last_played_date
   end
 
-  def to_s
-    "Game: #{@name}, #{@publish_date}, #{@multiplayer}, #{@last_played_date}"
-  end
-
   def can_be_archived?
-    current_date = Date.today
-    year = current_date.year - @publish_date.year
-    return true if year > 2
+    super ( @last_played_date.nil? || @last_played_date < Date.today - (2 * 365))
 
     false
   end
