@@ -27,9 +27,9 @@ module Methodmusic
 
   def save_album
     File.open('musicalbum.json', 'w') do |file|
-      album = @musicalbums.each_with_index.map do |alb, index|
+      album = @musicalbums.each_with_index.map do |alb, _index|
         {
-          album: alb.album_name, id: alb.id, Date: alb.publish_date, index: index
+          on_spotify: alb.on_spotify, album: alb.album_name, Date: alb.publish_date, id: alb.id
         }
       end
       file.write(JSON.generate(album))
@@ -41,12 +41,11 @@ module Methodmusic
 
     musicalbum_json = JSON.parse(File.read('musicalbum.json'))
     musicalbum_json.map do |album|
-      MusicAlbum.new(album['album'], album['id'], album['Date'], album['index'])
+      MusicAlbum.new(album['on_spotify'], album['album'], album['Date'])
     end
   end
 
   def list_all_music_albums
-    puts 'No Album  Date'
     @musicalbums.each_with_index do |alb, idx|
       print "#{idx})  Album: #{alb.album_name} Date:#{alb.publish_date} "
     end

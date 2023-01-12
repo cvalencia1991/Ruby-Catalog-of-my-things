@@ -11,9 +11,9 @@ module Genremethod
 
   def save_genre
     File.open('genre.json', 'w') do |file|
-      genre = @genre.each_with_index.map do |gen, index|
+      genre = @genre.each_with_index.map do |gen, _index|
         {
-          genre: gen.name, id: gen.id, index: index
+          genre: gen.name, id: gen.id
         }
       end
       file.write(JSON.generate(genre))
@@ -30,6 +30,6 @@ module Genremethod
   end
 
   def list_all_genres
-    @genre.each_with_index { |info, idx| print "#{idx}) #{info.name}" }
+    @genre.each { |info, _idx| puts info.name.to_s }
   end
 end
