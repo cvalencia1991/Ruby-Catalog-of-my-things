@@ -11,7 +11,7 @@ class App
 
   def initialize
     @genre = read_genre
-    @musicalbums = []
+    @musicalbums = read_album
   end
 
   def show_menu

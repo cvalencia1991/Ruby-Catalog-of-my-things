@@ -1,4 +1,6 @@
 require_relative './genremethod'
+require 'json'
+
 module Methodmusic
   include Genremethod
   def add_music_album
@@ -18,9 +20,30 @@ module Methodmusic
     else
       puts 'Invalid typing, please enter number again!'
     end
+    save_album
     puts 'Music Album created successfully 📚'
     genremethod
   end
+
+  def save_album
+    File.open('musicalbum.json', 'w') do |file|
+      album = @musicalbums.each_with_index.map do |alb, index|
+        {
+          album: alb.album_name, id: alb.id, Date: alb.publish_date, index: index
+        }
+      end
+      file.write(JSON.generate(album))
+    end
+  end
+
+  def read_album
+    return [] unless File.exist?('musicalbum.json')
+    musicalbum_json = JSON.parse(File.read('musicalbum.json'))
+    musicalbum_json.map do |album|
+      MusicAlbum.new(album['album'], album['id'],album['Date'],album['index'])
+    end
+  end
+
 
   def list_all_music_albums
     puts 'No Album  Date'
