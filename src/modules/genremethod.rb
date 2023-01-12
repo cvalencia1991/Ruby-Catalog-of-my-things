@@ -22,8 +22,9 @@ module Genremethod
 
   def read_genre
     return [] unless File.exist?('genre.json')
+
     genre_json = JSON.parse(File.read('genre.json'))
-    genre_json.map do |gen|
+    genre_json.map do |_gen|
       Genre.new(genre['genre'], genre['id'])
     end
   end
