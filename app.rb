@@ -10,7 +10,7 @@ class App
   include Genremethod
 
   def initialize
-    @genre = []
+    @genre = read_genre
     @musicalbums = []
   end
 
