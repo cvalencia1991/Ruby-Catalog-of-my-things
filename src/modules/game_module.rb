@@ -17,9 +17,9 @@ module GameModule
 
   def save_games
     File.open('json_files/games.json', 'w') do |file|
-      game = @games.each_with_index.map do |_game, _index|
+      game = @games.each_with_index.map do |gam, _index|
         {
-          publish_date: _game.publish_date, multiplayer: _game.multiplayer, last_played_date: _game.last_played_date
+          publish_date: gam.publish_date, multiplayer: gam.multiplayer, last_played_date: gam.last_played_date
         }
       end
       file.write(JSON.generate(game))
@@ -29,6 +29,7 @@ module GameModule
   def read_game
     return [] unless File.exist?('json_files/games.json')
     return [] if File.open('json_files/games.json', &:size).zero?
+
     game_json = JSON.parse(File.read('json_files/games.json'))
     game_json.map do |game|
       Game.new(game['publish_date'], game['multiplayer'], game['last_played_date'])
