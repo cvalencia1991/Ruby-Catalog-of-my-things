@@ -10,7 +10,7 @@ module Genremethod
   end
 
   def save_genre
-    File.open('genre.json', 'w') do |file|
+    File.open('src/database/genre.json', 'w') do |file|
       genre = @genre.each_with_index.map do |gen, _index|
         {
           genre: gen.name, id: gen.id
@@ -21,9 +21,9 @@ module Genremethod
   end
 
   def read_genre
-    return [] unless File.exist?('genre.json')
+    return [] unless File.exist?('src/database/genre.json')
 
-    genre_json = JSON.parse(File.read('genre.json'))
+    genre_json = JSON.parse(File.read('src/database/genre.json'))
     genre_json.map do |genre|
       Genre.new(genre['genre'])
     end

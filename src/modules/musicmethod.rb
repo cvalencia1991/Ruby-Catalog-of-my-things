@@ -26,7 +26,7 @@ module Methodmusic
   end
 
   def save_album
-    File.open('musicalbum.json', 'w') do |file|
+    File.open('src/database/musicalbum.json', 'w') do |file|
       album = @musicalbums.each_with_index.map do |alb, _index|
         {
           on_spotify: alb.on_spotify, album: alb.album_name, Date: alb.publish_date, id: alb.id
@@ -37,9 +37,9 @@ module Methodmusic
   end
 
   def read_album
-    return [] unless File.exist?('musicalbum.json')
+    return [] unless File.exist?('src/database/musicalbum.json')
 
-    musicalbum_json = JSON.parse(File.read('musicalbum.json'))
+    musicalbum_json = JSON.parse(File.read('src/database/musicalbum.json'))
     musicalbum_json.map do |album|
       MusicAlbum.new(album['on_spotify'], album['album'], album['Date'])
     end
