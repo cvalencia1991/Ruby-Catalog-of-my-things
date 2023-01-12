@@ -1,8 +1,21 @@
 require 'colorize'
+require './src/modules/musicmethod'
+require './src/modules/genremethod'
+require './src/classes/musicalbum'
+require './src/classes/items'
+require './src/classes/genre'
 require_relative './src/modules/game_module'
 require 'json'
 
 class App
+  include Methodmusic
+  include Genremethod
+
+  def initialize
+    @genre = read_genre
+    @musicalbums = read_album
+  end
+
   def show_menu
     puts "\nPlease choose an option by entering a number from below 👇: \n\n".yellow.underline
     puts '[ 1 ] - List all books'.cyan
@@ -44,7 +57,7 @@ class App
     case user_choice
     when 1 # list_all_books
     when 2 # list_all_music_albums
-    when 3 then list_all_games
+    when 3 # list_all_games
     when 4 # list_all_genres
     when 5 # list_all_labels
     when 6 # list_authors
@@ -55,7 +68,7 @@ class App
   def add_items(user_choice)
     case user_choice
     when 7 # create_book
-    when 8 # add_music_album
+    when 8 then add_music_album
     when 9 # add_game
     end
     show_menu
