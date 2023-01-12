@@ -7,7 +7,7 @@ describe Genre do
       expect(genre.name).to eq('cesar')
     end
 
-    it 'creates a new Genre name' do
+    it 'items of genre are empty' do
       genre = Genre.new('cesar')
       expect(genre.items).to eq([])
     end
@@ -20,7 +20,7 @@ describe Genre do
     end
 
     it 'add random item' do
-      item = Item.new('archived', DateTime.now.to_s)
+      item = Item.new(true, '2022-02-01')
       genre = Genre.new('cesar', id: 10)
       genre.add_item(item)
       expect(genre.items).to include(item)
