@@ -38,12 +38,12 @@ module Methodmusic
 
   def read_album
     return [] unless File.exist?('musicalbum.json')
+
     musicalbum_json = JSON.parse(File.read('musicalbum.json'))
     musicalbum_json.map do |album|
-      MusicAlbum.new(album['album'], album['id'],album['Date'],album['index'])
+      MusicAlbum.new(album['album'], album['id'], album['Date'], album['index'])
     end
   end
-
 
   def list_all_music_albums
     puts 'No Album  Date'
