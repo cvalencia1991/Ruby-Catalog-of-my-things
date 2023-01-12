@@ -2,26 +2,46 @@ require 'json'
 require_relative '../classes/game'
 require 'date'
 
-def load_games
-  data = []
-  file = './json_files/games.json'
-  if File.exist?(file)
-    JSON.parse(File.read(file)).each do |game|
-      publish_date = game['publish_date']
-      last_played_at = game['last_played_date']
-      data.push(Game.new(publish_date, game['multiplayer'], last_played_at, archived: game['archived']))
+module GameModule
+  def add_game
+    puts 'Enter the published date:'
+    publish_date = gets.chomp
+    puts 'Does it have Multiplayer (y/n)'
+    is_multiplayer = gets.chomp
+    is_multiplayer = is_multiplayer == 'y'
+    puts 'Enter the last time you played the game date:'
+    last_played_at = gets.chomp
+    @games.push(Game.new(publish_date, is_multiplayer, last_played_at))
+    save_games
+  end
+
+  def save_games
+    File.open('json_files/games.json', 'w') do |file|
+      game = @games.each_with_index.map do |_game, _index|
+        {
+          publish_date: _game.publish_date, multiplayer: _game.multiplayer, last_played_date: _game.last_played_date
+        }
+      end
+      file.write(JSON.generate(game))
     end
-  else
-    File.write('./json_files/games.json', [])
   end
 
-  data
-end
-
-def create_game
-  data = []
-  @games.each do |game|
-    data.push(game.publish_date, game.multiplayer, game.last_played_date, archived: game.archived)
+  def read_game
+    return [] unless File.exist?('json_files/games.json')
+    return [] if File.open('json_files/games.json', &:size).zero?
+    game_json = JSON.parse(File.read('json_files/games.json'))
+    game_json.map do |game|
+      Game.new(game['publish_date'], game['multiplayer'], game['last_played_date'])
+    end
   end
-  File.write('./json_files/games.json', JSON.generate(data))
+
+  def list_all_games
+    @games.each do |game|
+      puts "Publish date: #{game.publish_date}"
+      puts "Multiplayer: #{game.multiplayer}"
+      puts "Last played at: #{game.last_played_date}"
+      puts "Archived: #{game.archived}"
+      puts ''
+    end
+  end
 end

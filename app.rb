@@ -10,10 +10,12 @@ require 'json'
 class App
   include Methodmusic
   include Genremethod
+  include GameModule
 
   def initialize
     @genre = read_genre
     @musicalbums = read_album
+    @games = read_game
   end
 
   def show_menu
@@ -32,8 +34,7 @@ class App
     select_option(user_choice)
   end
 
-  @load_games = load_games
-  @create_games = create_game
+  # @create_games = create_game
 
   def select_option(user_choice)
     case user_choice
@@ -69,16 +70,9 @@ class App
     case user_choice
     when 7 # create_book
     when 8 then add_music_album
-    when 9 # add_game
+    when 9 then add_game
     end
     show_menu
-  end
-
-  def list_all_games
-    puts 'Games:'
-    @load_games.each do |game|
-      puts "Game name: #{game}"
-    end
   end
 
   def exit
