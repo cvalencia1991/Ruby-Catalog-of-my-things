@@ -1,4 +1,6 @@
 require 'colorize'
+require_relative './src/modules/game_module'
+require 'json'
 
 class App
   def show_menu
@@ -16,6 +18,9 @@ class App
     user_choice = gets.chomp.to_i
     select_option(user_choice)
   end
+
+  @load_games = load_games
+  @create_games = create_game
 
   def select_option(user_choice)
     case user_choice
@@ -39,7 +44,7 @@ class App
     case user_choice
     when 1 # list_all_books
     when 2 # list_all_music_albums
-    when 3 # list_all_games
+    when 3 then list_all_games
     when 4 # list_all_genres
     when 5 # list_all_labels
     when 6 # list_authors
@@ -54,6 +59,13 @@ class App
     when 9 # add_game
     end
     show_menu
+  end
+
+  def list_all_games
+    puts 'Games:'
+    @load_games.each do |game|
+      puts "Game name: #{game}"
+    end
   end
 
   def exit
