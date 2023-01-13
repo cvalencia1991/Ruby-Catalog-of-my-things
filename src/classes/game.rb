@@ -1,4 +1,3 @@
-require_relative './items'
 require 'date'
 
 class Game < Item
@@ -10,6 +9,8 @@ class Game < Item
     @multiplayer = multiplayer
     @last_played_date = Date.parse(last_played_date)
   end
+
+  private
 
   def can_be_archived?
     current_date = Date.today
