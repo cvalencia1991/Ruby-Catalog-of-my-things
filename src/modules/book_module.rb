@@ -5,6 +5,7 @@ require_relative './genre_module'
 require_relative './valid_date'
 require_relative './valid_input'
 require 'colorize'
+require 'date'
 
 module BookModule
   # include LabelModule
@@ -39,84 +40,62 @@ module BookModule
 
     author = add_author
     author.add_item(book)
-    puts "\nAuthor added for book #{book.title} successfully 👤✅".green
+    puts "\nAuthor added for book #{book.title} successfully 👤 ✅".green
 
     label = add_label
     label.add_item(book)
-    puts "\nLabel added for book #{book.title} successfully 📘✅ ".green
+    puts "\nLabel added for book #{book.title} successfully 📘 ✅ ".green
 
     genre = add_genre
     genre.add_item(book)
-    puts "\nGenre added for label #{book.title} successfully 🤹‍♂️✅ ".green
+    puts "\nGenre added for book #{book.title} successfully ⭐ ✅ ".green
   end
 
   # def archive_book(book)
-  #   while true
-  #     print 'Do you want to archive this book? (y/n): '
-  #     archive_choice = gets.chomp
-  #     break if %w[y n].include?(archive_choice)
+  #   current_date = Date.today
+  #   year = current_date.year - album.publish_date.year
 
-  #     puts "\n🛑 ❌ Invalid input. Please enter y or n \n".red
-
-  #   end
-
-  #   archived = (archive_choice == 'y')
+  #   archived = (get_user_input('Do you want to archive this book? (y/n): ', %w[y n]) == 'y')
   #   book.archived = archived
   #   if archived
   #     if book.move_to_archive
-  #       while true
-  #         print 'Do you want to confirm archiving this book (y/n): '
-  #         confirm = gets.chomp
-  #         break if %w[y n].include?(confirm)
-
-  #         puts "\n🛑 ❌ Invalid input Please enter y or n \n".red
-
-  #       end
-  #       @books << book
-  #       if confirm == 'y'
-  #         puts "\nBook created and archived successfully 📕✅ ".green
+  #       if get_user_input('Do you want to confirm archiving this book (y/n): ', %w[y n]) == 'y'
+  #         puts "\nBook created and archived successfully 📕 ✅ ".green
   #       else
   #         book.archived = false
-  #         puts "\nBook not archived but created successfully 📕✅ ".green
+  #         puts "\nBook not archived but created successfully 📕 ✅ ".green
   #       end
   #     else
-  #       @books << book
-  #       puts "\nThe book is not old enough to be archived. Book created successfully 📕✅".green
+  #       book.archived = false
+  #       puts "\nThe book is not old enough to be archived. Book created successfully 📕 ✅".green
   #     end
   #   else
-  #     @books << book
-  #     puts "\nBook created successfully 📕✅".green
+  #     puts "\nBook created successfully 📕 ✅".green
   #   end
-  # end
-
-  # def get_user_input(prompt, valid_responses)
-  #   while true
-  #     print prompt
-  #     input = gets.chomp
-  #     break if valid_responses.include?(input)
-
-  #     puts "\n🛑 ❌ Invalid input. Please enter one of the following: #{valid_responses.join(', ')} \n".red
-  #   end
-  #   input
+  #   @books << book
   # end
 
   def archive_book(book)
-    archived = (get_user_input('Do you want to archive this book? (y/n): ', %w[y n]) == 'y')
-    book.archived = archived
-    if archived
-      if book.move_to_archive
+    current_date = Date.today
+    year = current_date.year - book.publish_date.year
+    
+    if year > 10 || book.cover_state == 'bad'
+      archived = (get_user_input('Do you want to archive this book? (y/n): ', %w[y n]) == 'y')
+      book.archived = archived
+      if archived
         if get_user_input('Do you want to confirm archiving this book (y/n): ', %w[y n]) == 'y'
-          puts "\nBook created and archived successfully 📕✅ ".green
+          book.move_to_archive
+          puts "\nBook created and archived successfully 📕 ✅ ".green
         else
           book.archived = false
-          puts "\nBook not archived but created successfully 📕✅ ".green
+          puts "\nBook not archived but created successfully 📕 ✅ ".green
         end
       else
         book.archived = false
-        puts "\nThe book is not old enough to be archived. Book created successfully 📕✅".green
+        puts "\nThe book is not old enough or not labeled as bad to be archived. Book created successfully 📕 ✅".green
       end
     else
-      puts "\nBook created successfully 📕✅".green
+      puts "\nBook created successfully 📕 ✅".green
     end
     @books << book
   end

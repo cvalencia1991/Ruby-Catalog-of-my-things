@@ -10,7 +10,7 @@ module GenreModule
     else
       puts "\nAvailable Genres in the list 🔸🔷 : #{@genres.count} \n".magenta
       @genres.each_with_index do |genre, index|
-        print "[#{index + 1}]: Name: #{genre.name} \n"
+        print "[ #{index + 1} ]: Name: #{genre.name} \n"
       end
     end
   end
@@ -47,7 +47,7 @@ module GenreModule
   end
 
   def add_genre
-    puts "\nSelect a genre form the following list: "
+    puts "\nSelect a genre for this item or create a new one: "
     puts '[ 1 ] Select from existing genres'
     puts '[ 2 ] Add a new genre'
 

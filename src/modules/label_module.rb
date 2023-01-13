@@ -10,7 +10,7 @@ module LabelModule
     else
       puts "\nAvailable labels in the list 🔖 ⭐ : #{@labels.count} \n".magenta
       @labels.each_with_index do |label, index|
-        puts "[#{index + 1}]: Title: #{label.title} | Color: #{label.color}"
+        puts "[ #{index + 1} ]: Title: #{label.title} | Color: #{label.color}"
       end
     end
   end
@@ -29,7 +29,7 @@ module LabelModule
     list_all_labels
     input = nil
     while input.nil?
-      print "\nPlease select a genre by typing the corresponding number or "
+      print "\nPlease select a label by typing the corresponding number or "
       print "type 'back' to return to the previous menu: "
       input = gets.chomp
       if !valid_input?(input)
@@ -49,7 +49,7 @@ module LabelModule
   end
 
   def add_label
-    puts "\nSelect a label for this book or create a new one: "
+    puts "\nSelect a label for this item or create a new one: "
     puts '[ 1 ] Select from existing labels'
     puts '[ 2 ] Create a new label'
 
