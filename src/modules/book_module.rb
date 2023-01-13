@@ -3,6 +3,7 @@ require_relative './label_module'
 require_relative './authors_module'
 require_relative './genre_module'
 require_relative './valid_date'
+require 'colorize'
 
 module BookModule
   # include LabelModule
@@ -11,8 +12,9 @@ module BookModule
 
   def list_all_books
     if @books.empty?
-      puts "No Books to Show 🚫 Please add some books \n"
+      puts "No Books to Show 🚫 Please add some books . . .\n".magenta
     else
+      puts "\nAvailable Books in the list 📚 . . .\n".magenta
       @books.each_with_index do |book, index|
         print "[#{index + 1}]: Title: #{book.title} ╏ Author: #{book.author.first_name} #{book.author.last_name} | "
         print "Label: #{book.label.title} | Archived: #{book.archived} ╏ Publisher: #{book.publisher} ╏ "

@@ -13,8 +13,9 @@ module Methodmusic
 
   def list_all_music_albums
     if @albums.empty?
-      puts "No Albums to Show 🚫 Please add some Music Albums \n".magenta
+      puts "No Albums to Show 🚫 Please add some Music Albums . . .\n".magenta
     else
+      puts "\nAvailable Music Albums in the list 🎵🎧 . . . \n".magenta
       @albums.each_with_index do |album, index|
         print "#[#{index + 1}]:  Music Album: #{album.album_name} | Author: #{album.author.first_name} #{album.author.last_name} |"
         print "Label: #{album.label.title} | Archived: #{album.archived} ╏"

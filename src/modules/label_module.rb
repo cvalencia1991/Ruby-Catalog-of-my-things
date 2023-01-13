@@ -7,7 +7,7 @@ module LabelModule
     if @labels.empty?
       puts "\nNo labels found in list 🚫 Add some items with labels . . . ".magenta
     else
-      puts "\nAvailable items with labels in the list 🔖 \n"
+      puts "\nAvailable labels in the list 🔖 . . .\n".magenta
       @labels.each_with_index do |label, index|
         puts "[#{index + 1}]: Title: #{label.title} | Color: #{label.color}"
       end

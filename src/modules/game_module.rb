@@ -16,6 +16,7 @@ module GameModule
     if @games.empty?
       puts "No Games to Show 🚫 Please add some Games . . .\n".magenta
     else
+      puts "\nAvailable Games in the list 🏓🎮 . . .\n".magenta
       @games.each_with_index do |game, index|
         print "#[#{index + 1}]: Name of Game: #{game.game_name} | Game Writer: #{game.author.first_name} #{game.author.last_name} |"
         print "Label: #{game.label.title} | Archived: #{game.archived} | Multiplayer: #{game.multiplayer} |"

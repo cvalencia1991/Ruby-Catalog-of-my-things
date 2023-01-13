@@ -7,7 +7,7 @@ module GenreModule
     if @genres.empty?
       puts "\nNo Genres to Show 🚫 Add some genres . . . ".magenta
     else
-      puts "\nAvailable Genres in the list 🤹‍♂️ \n"
+      puts "\nAvailable Genres in the list 🤹‍♂️ . . .\n".magenta
       @genres.each_with_index do |genre, index|
         print "[#{index + 1}]: Name: #{genre.name} \n"
       end
