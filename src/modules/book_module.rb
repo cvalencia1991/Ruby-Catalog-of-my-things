@@ -3,6 +3,7 @@ require_relative './label_module'
 require_relative './authors_module'
 require_relative './genre_module'
 require_relative './valid_date'
+require_relative './valid_input'
 require 'colorize'
 
 module BookModule
@@ -88,16 +89,16 @@ module BookModule
   #   end
   # end
 
-  def get_user_input(prompt, valid_responses)
-    while true
-      print prompt
-      input = gets.chomp
-      break if valid_responses.include?(input)
+  # def get_user_input(prompt, valid_responses)
+  #   while true
+  #     print prompt
+  #     input = gets.chomp
+  #     break if valid_responses.include?(input)
 
-      puts "\n🛑 ❌ Invalid input. Please enter one of the following: #{valid_responses.join(', ')} \n".red
-    end
-    input
-  end
+  #     puts "\n🛑 ❌ Invalid input. Please enter one of the following: #{valid_responses.join(', ')} \n".red
+  #   end
+  #   input
+  # end
 
   def archive_book(book)
     archived = (get_user_input('Do you want to archive this book? (y/n): ', %w[y n]) == 'y')

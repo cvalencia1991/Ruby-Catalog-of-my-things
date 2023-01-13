@@ -1,6 +1,7 @@
-require 'colorize'
 require_relative '../classes/label'
 require_relative './book_module'
+require_relative './valid_input'
+require 'colorize'
 
 module LabelModule
   def list_all_labels
@@ -41,11 +42,11 @@ module LabelModule
     @labels[input.to_i - 1]
   end
 
-  def valid_input?(input)
-    return true if input == 'back'
+  # def valid_input?(input)
+  #   return true if input == 'back'
 
-    (1..@genres.length).include?(input.to_i)
-  end
+  #   (1..@genres.length).include?(input.to_i)
+  # end
 
   def add_label
     puts "\nSelect a label for this book or create a new one: "

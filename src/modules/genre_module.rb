@@ -1,6 +1,7 @@
-require 'date'
-require 'colorize'
 require_relative '../classes/genre'
+require_relative './valid_input'
+require 'colorize'
+require 'date'
 
 module GenreModule
   def list_all_genres
@@ -39,11 +40,11 @@ module GenreModule
     @genres[input.to_i - 1]
   end
 
-  def valid_input?(input)
-    return true if input == 'back'
+  # def valid_input?(input)
+  #   return true if input == 'back'
 
-    (1..@genres.length).include?(input.to_i)
-  end
+  #   (1..@genres.length).include?(input.to_i)
+  # end
 
   def add_genre
     puts "\nSelect a genre form the following list: "

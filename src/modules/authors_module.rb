@@ -1,6 +1,7 @@
-require 'date'
-require 'colorize'
+require_relative './valid_input'
 require_relative '../classes/author'
+require 'colorize'
+require 'date'
 
 module AuthorModule
   def list_all_authors
@@ -41,11 +42,11 @@ module AuthorModule
     @authors[input.to_i - 1]
   end
 
-  def valid_input?(input)
-    return true if input == 'back'
+  # def valid_input?(input)
+  #   return true if input == 'back'
 
-    (1..@genres.length).include?(input.to_i)
-  end
+  #   (1..@genres.length).include?(input.to_i)
+  # end
 
   def add_author
     puts "\nSelect an author form the following list: "
