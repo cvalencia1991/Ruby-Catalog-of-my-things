@@ -13,7 +13,7 @@ module GameModule
 
   def list_all_games
     if @games.empty?
-      puts "No Games to Show 🚫 Please add some Games . . .\n".magenta
+      puts "\nNo Games to Show 🚫 Please add some Games . . .".magenta
     else
       puts "\nAvailable Games in the list 🏓 🎮 : #{@games.count} \n".magenta
       @games.each_with_index do |game, index|

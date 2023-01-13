@@ -13,7 +13,7 @@ module MusicModule
 
   def list_all_music_albums
     if @albums.empty?
-      puts "No Albums to Show 🚫 Please add some Music Albums . . .\n".magenta
+      puts "\nNo Albums to Show 🚫 Please add some Music Albums . . .".magenta
     else
       puts "\nAvailable Music Albums in the list 🎵 🎧 : #{@albums.count} \n".magenta
       @albums.each_with_index do |album, index|
@@ -61,7 +61,7 @@ module MusicModule
   # rubocop:disable Metrics/PerceivedComplexity
   # rubocop:disable Metrics/MethodLength
   def archive_album(album)
-    cover = (get_user_input('Is the music album on Spotify? (y/n): ', %w[y n]) == 'y')
+    on_spotify = (get_user_input('Is the music album on Spotify? (y/n): ', %w[y n]) == 'y')
     album.on_spotify = on_spotify
 
     current_date = Date.today

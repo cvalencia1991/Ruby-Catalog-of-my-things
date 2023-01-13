@@ -14,7 +14,7 @@ module BookModule
 
   def list_all_books
     if @books.empty?
-      puts "No Books to Show 🚫 Please add some books . . .\n".magenta
+      puts "\nNo Books to Show 🚫 Please add some books . . .".magenta
     else
       puts "\nAvailable Books in the list 📚 📕 : #{@books.count}\n".magenta
       @books.each_with_index do |book, index|
