@@ -8,7 +8,6 @@ require 'colorize'
 require 'date'
 
 module BookModule
-  # include LabelModule
   include AuthorModule
   include GenreModule
 
@@ -50,30 +49,6 @@ module BookModule
     genre.add_item(book)
     puts "\nGenre added for book #{book.title} successfully ⭐ ✅ ".green
   end
-
-  # def archive_book(book)
-  #   current_date = Date.today
-  #   year = current_date.year - album.publish_date.year
-
-  #   archived = (get_user_input('Do you want to archive this book? (y/n): ', %w[y n]) == 'y')
-  #   book.archived = archived
-  #   if archived
-  #     if book.move_to_archive
-  #       if get_user_input('Do you want to confirm archiving this book (y/n): ', %w[y n]) == 'y'
-  #         puts "\nBook created and archived successfully 📕 ✅ ".green
-  #       else
-  #         book.archived = false
-  #         puts "\nBook not archived but created successfully 📕 ✅ ".green
-  #       end
-  #     else
-  #       book.archived = false
-  #       puts "\nThe book is not old enough to be archived. Book created successfully 📕 ✅".green
-  #     end
-  #   else
-  #     puts "\nBook created successfully 📕 ✅".green
-  #   end
-  #   @books << book
-  # end
 
   def archive_book(book)
     current_date = Date.today
