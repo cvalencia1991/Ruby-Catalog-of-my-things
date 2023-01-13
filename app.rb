@@ -1,32 +1,31 @@
-require 'colorize'
+require_relative './src/modules/game_module'
+require_relative './src/modules/book_module'
+require_relative './src/modules/genre_module'
+require_relative './src/modules/label_module'
+require_relative './src/storage'
 require './src/modules/musicmethod'
-require './src/modules/genremethod'
 require './src/classes/musicalbum'
 require './src/classes/items'
 require './src/classes/genre'
-require_relative './src/modules/game_module'
-require_relative './src/modules/book_module'
-require_relative './src/modules/label_module'
-require_relative './src/modules/genre_module'
+require 'colorize'
 require 'json'
 
 class App
-  include Methodmusic
-  include Genremethod
-  include GameModule
   include BookModule
   include LabelModule
-  include AuthorModule
   include GenreModule
+  include Methodmusic
+  include GameModule
+  include AuthorModule
 
   def initialize
-    @genre = read_genre
-    @musicalbums = read_album
-    @games = read_game
+    @games = []
+    @albums = []
     @labels = []
     @books = []
     @authors = []
     @genres = []
+    load_data
   end
 
   def show_menu
