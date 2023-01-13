@@ -55,3 +55,13 @@ CREATE TABLE musicalbums(
   genre_id INT REFERENCES genres(id), 
   PRIMARY KEY(id)
 );
+
+CREATE TABLE items (
+    id INT PRIMARY KEY,
+    genre VARCHAR(255),
+    author VARCHAR(255),
+    source VARCHAR(255),
+    label VARCHAR(255),
+    publish_date DATE,
+    archived BOOLEAN
+);
