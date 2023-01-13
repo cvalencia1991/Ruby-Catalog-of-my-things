@@ -5,9 +5,9 @@ require_relative './book_module'
 module LabelModule
   def list_all_labels
     if @labels.empty?
-      puts "No labels found in list 🚫 Add some items with labels \n"
+      puts "\nNo labels found in list 🚫 Add some items with labels . . . ".magenta
     else
-      puts "Available items with labels in the list 🔖 \n"
+      puts "\nAvailable items with labels in the list 🔖 \n"
       @labels.each_with_index do |label, index|
         puts "[#{index + 1}]: Title: #{label.title} | Color: #{label.color}"
       end
@@ -26,29 +26,16 @@ module LabelModule
 
   def select_label
     list_all_labels
-    print 'Please select a label by typing the corresponding number or '
-    print "type 'back' to return to the previous menu: \n"
-    input = gets.chomp
-    if input == 'back'
-      get_book_label
-    else
-      @labels[input.to_i - 1]
-
-    end
-  end
-
-  def select_label
-    list_all_labels
     input = nil
     while input.nil?
-      print 'Please select a genre by typing the corresponding number or '
-      print "type 'back' to return to the previous menu: \n"
+      print "\nPlease select a genre by typing the corresponding number or "
+      print "type 'back' to return to the previous menu: "
       input = gets.chomp
       if !valid_input?(input)
-        puts "Invalid input. Please try again \n"
+        print "\n🛑 ❌ Invalid input. Please try again \n".red
         input = nil
       elsif input == 'back'
-        get_book_label
+        add_label
       end
     end
     @labels[input.to_i - 1]
@@ -60,14 +47,14 @@ module LabelModule
     (1..@genres.length).include?(input.to_i)
   end
 
-  def get_book_label
-    puts 'Select a label for this book or create a new one: '
+  def add_label
+    puts "\nSelect a label for this book or create a new one: "
     puts '[ 1 ] Select from existing labels'
     puts '[ 2 ] Create a new label'
 
     input = gets.chomp.to_i
     until [1, 2].include?(input)
-      puts "Invalid input, please enter 1 or 2 \n"
+      print "\n🛑 ❌ Invalid input, please enter 1 or 2 \n".red
       input = gets.chomp.to_i
     end
 

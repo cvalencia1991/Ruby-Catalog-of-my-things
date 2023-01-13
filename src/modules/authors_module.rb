@@ -5,9 +5,9 @@ require_relative '../classes/author'
 module AuthorModule
   def list_all_authors
     if @authors.empty?
-      puts "No Authors to Show 🚫 Add some authors \n"
+      puts "\nNo Authors to Show 🚫 Add some authors . . .".magenta
     else
-      puts "Available Authors in the list 👥✍ \n"
+      puts "\nAvailable Authors in the list 👥✍ \n"
       @authors.each_with_index do |author, index|
         print "[#{index + 1}]: First Name: #{author.first_name} | Last Name: #{author.last_name} \n"
       end
@@ -28,14 +28,14 @@ module AuthorModule
     list_all_authors
     input = nil
     while input.nil?
-      print 'Please select a genre by typing the corresponding number or '
+      print "\nPlease select a genre by typing the corresponding number or "
       print "type 'back' to return to the previous menu: "
       input = gets.chomp
       if !valid_input?(input)
-        puts 'Invalid input. Please try again.'
+        print "\n🛑 ❌ Invalid input. Please try again \n".red
         input = nil
       elsif input == 'back'
-        get_author
+        add_author
       end
     end
     @authors[input.to_i - 1]
@@ -47,14 +47,14 @@ module AuthorModule
     (1..@genres.length).include?(input.to_i)
   end
 
-  def get_author
-    puts 'Select an author form the following list: '
+  def add_author
+    puts "\nSelect an author form the following list: "
     puts '[ 1 ] Select from existing authors'
     puts '[ 2 ] Add a new author'
 
     input = gets.chomp.to_i
     until [1, 2].include?(input)
-      puts "Invalid input, please enter 1 or 2 \n"
+      print "\n🛑 ❌ Invalid input, please enter 1 or 2 \n".red
       input = gets.chomp.to_i
     end
 
