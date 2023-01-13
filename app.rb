@@ -28,6 +28,15 @@ class App
     load_data
   end
 
+  def load_data
+    @labels = Storage.load_data('labels')
+    @books = Storage.load_data('books')
+    @genres = Storage.load_data('genres')
+    @albums = Storage.load_data('music_albums')
+    @authors = Storage.load_data('authors')
+    @games = Storage.load_data('games')
+  end
+
   def show_menu
     puts "\nPlease choose an option by entering a number from below 👇: \n\n".yellow.underline
     puts '[ 1 ] - List all books'.cyan
