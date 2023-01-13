@@ -1,13 +1,10 @@
-require 'date'
-require 'colorize'
-require 'json'
 require_relative '../classes/book'
 require_relative './label_module'
 require_relative './authors_module'
 require_relative './genre_module'
+require_relative './valid_date'
 
 module BookModule
-
   include LabelModule
   include AuthorModule
   include GenreModule
@@ -17,9 +14,9 @@ module BookModule
       puts "No Books to Show 🚫 Please add some books \n"
     else
       @books.each_with_index do |book, index|
-        print "[#{index}]: Title: #{book.title} ╏ "
+        print "[#{index + 1}]: Title: #{book.title} ╏ Author: #{book.author.first_name} #{book.author.last_name} | Label: #{book.label.title}"
         print " Archived: #{book.archived} ╏ Publisher: #{book.publisher} ╏ Publication_date: #{book.publish_date} ╏"
-        print " Cover State: #{book.cover_state} ╏ Genre: "
+        print " Cover State: #{book.cover_state} ╏ Genre: #{book.genre.name}"
       end
     end
   end
@@ -71,20 +68,5 @@ module BookModule
     genre = get_genre
     genre.add_item(book)
     puts "Genre added for label #{book.title} successfully 🤹‍♂️✅"
-  end
-
-
-  def valid_date?(date)
-    Date.valid_date?(date[0..3].to_i, date[5..6].to_i, date[8..9].to_i)
-  end
-
-  def get_valid_date
-    print 'Enter the publication date of the book e.g (2023/01/11): '
-    date = gets.chomp
-    while !valid_date?(date)
-      print "Invalid date format, please enter a valid date (yyyy-mm-dd): "
-      date = gets.chomp
-    end
-    return date
   end
 end
