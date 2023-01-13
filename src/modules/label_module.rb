@@ -21,22 +21,21 @@ module LabelModule
     color = gets.chomp
     label = Label.new(title, color)
     @labels << label
-    return label
+    label
   end
 
   def select_label
     list_all_labels
-      print 'Please select a label by typing the corresponding number or '
-      print "type 'back' to return to the previous menu: \n"
-      input = gets.chomp
-      if input == 'back'
-        get_book_label
-      else
-        label = @labels[input.to_i - 1]
-      return label
+    print 'Please select a label by typing the corresponding number or '
+    print "type 'back' to return to the previous menu: \n"
+    input = gets.chomp
+    if input == 'back'
+      get_book_label
+    else
+      @labels[input.to_i - 1]
+
     end
   end
-
 
   def select_label
     list_all_labels
@@ -52,12 +51,12 @@ module LabelModule
         get_book_label
       end
     end
-    label = @labels[input.to_i - 1]
-    return label
+    @labels[input.to_i - 1]
   end
-  
+
   def valid_input?(input)
     return true if input == 'back'
+
     (1..@genres.length).include?(input.to_i)
   end
 

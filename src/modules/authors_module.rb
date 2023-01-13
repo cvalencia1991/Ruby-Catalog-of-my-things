@@ -24,47 +24,33 @@ module AuthorModule
     author
   end
 
-  # def select_author
-  #   list_all_authors
-  #     print "Please select an author by typing the corresponding number or "
-  #     print "type 'back' to return to the previous menu: "
-  #     input = gets.chomp
-  #     if input == 'back'
-  #       get_author
-  #     else
-  #       author = @authors[input.to_i - 1]
-  #     return author
-  #   end
-  # end
-
   def select_author
     list_all_authors
     input = nil
     while input.nil?
-      print "Please select a genre by typing the corresponding number or "
+      print 'Please select a genre by typing the corresponding number or '
       print "type 'back' to return to the previous menu: "
       input = gets.chomp
       if !valid_input?(input)
-        puts "Invalid input. Please try again."
+        puts 'Invalid input. Please try again.'
         input = nil
       elsif input == 'back'
         get_author
       end
     end
-    author = @authors[input.to_i - 1]
-    return author
+    @authors[input.to_i - 1]
   end
-  
+
   def valid_input?(input)
     return true if input == 'back'
+
     (1..@genres.length).include?(input.to_i)
   end
 
-
   def get_author
-    puts "Select an author form the following list: "
-    puts "[ 1 ] Select from existing authors"
-    puts "[ 2 ] Add a new author"
+    puts 'Select an author form the following list: '
+    puts '[ 1 ] Select from existing authors'
+    puts '[ 2 ] Add a new author'
 
     input = gets.chomp.to_i
     until [1, 2].include?(input)
@@ -74,9 +60,9 @@ module AuthorModule
 
     case input
     when 1
-      return select_author
+      select_author
     when 2
-      return create_author
+      create_author
     end
   end
 end

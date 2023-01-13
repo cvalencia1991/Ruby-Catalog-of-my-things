@@ -11,22 +11,22 @@ def valid_month?(month)
 end
 
 def valid_date?(date)
-  year, month, day = date.split("-")
-  year, month, day = year.to_i, month.to_i, day.to_i
+  year, month, day = date.split('-')
+  year = year.to_i
+  month = month.to_i
+  day = day.to_i
 
-  if valid_date_format?(date) && valid_day?(day) && valid_month?(month)
-    return true
-  else
-    return false
-  end
+  return true if valid_date_format?(date) && valid_day?(day) && valid_month?(month)
+
+  false
 end
 
 def get_valid_date
   print 'Enter the publication date e.g (2023-01-11): '
   date = gets.chomp
   until valid_date?(date)
-    print "Invalid date format, please enter a valid date (yyyy-mm-dd): "
+    print 'Invalid date format, please enter a valid date (yyyy-mm-dd): '
     date = gets.chomp
   end
-  return date
+  date
 end
