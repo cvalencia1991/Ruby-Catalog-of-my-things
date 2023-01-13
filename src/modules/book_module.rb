@@ -30,32 +30,8 @@ module BookModule
     print 'Enter thr cover state of the book e.g (new, good, acceptable, bad): '
     cover = gets.chomp
 
-    print 'Do you want to archive this book? (y/n): '
-    archive_choice = gets.chomp
-    archived = (archive_choice == 'y')
-    book = Book.new(title, date, publisher, cover, archived: archived)
-    if archived
-      if book.move_to_archive
-        print 'Do you want to confirm archiving this book (y/n): '
-        confirm = gets.chomp
-        if confirm == 'y'
-          book = Book.new(title, date, publisher, cover, archived: archived)
-          @books << book
-          puts "Book created and archived successfully 📕✅"
-        elsif confirm == 'n'
-          puts "Book not archived"
-        else
-          puts 'Please add valid input'
-        end
-      else
-        puts "The book is not old enough to be archived"
-        @books << book
-        puts "Book created successfully 📕✅"
-      end
-    else
-      @books << book
-      puts "Book created successfully 📕✅"
-    end
+    book = Book.new(title, date, publisher, cover)
+    archive_book(book)  
   
     author = get_author
     author.add_item(book)
@@ -68,5 +44,45 @@ module BookModule
     genre = get_genre
     genre.add_item(book)
     puts "Genre added for label #{book.title} successfully 🤹‍♂️✅"
+  end
+
+  def archive_book(book)
+    while true
+      print 'Do you want to archive this book? (y/n): '
+      archive_choice = gets.chomp
+      if archive_choice == 'y' || archive_choice == 'n'
+        break
+      else
+        puts 'Invalid input, please enter y or n'
+      end
+    end
+  
+    archived = (archive_choice == 'y')
+    book.archived = archived
+    if archived
+      if book.move_to_archive
+        while true
+          print 'Do you want to confirm archiving this bookkkkkkkkk (y/n): '
+          confirm = gets.chomp
+          if confirm == 'y' || confirm == 'n'
+            break
+          else
+            puts 'Invalid input, please enter y or n'
+          end
+        end
+        if confirm == 'y'
+          @books << book
+          puts "Book created and archived successfully 📕✅"
+        else
+          @books << book
+          puts "Book not archived but created successfully 📕✅"
+        end
+      else
+        puts "The book is not old enough to be archived"
+      end
+    else
+      @books << book
+      puts "Book created successfully 📕✅"
+    end
   end
 end
