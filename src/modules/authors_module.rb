@@ -1,13 +1,14 @@
-require 'date'
-require 'colorize'
+require_relative './valid_input'
 require_relative '../classes/author'
+require 'colorize'
+require 'date'
 
 module AuthorModule
   def list_all_authors
     if @authors.empty?
       puts "\nNo Authors to Show 🚫 Add some authors . . .".magenta
     else
-      puts "\nAvailable Authors in the list 👥✍ \n"
+      puts "\nAvailable Authors in the list 👤 📝 : #{@authors.count} \n".magenta
       @authors.each_with_index do |author, index|
         print "[#{index + 1}]: First Name: #{author.first_name} | Last Name: #{author.last_name} \n"
       end
@@ -15,9 +16,9 @@ module AuthorModule
   end
 
   def create_author
-    print 'Enter the first name of the author: '
+    print 'Enter the first name of the writer: '
     first_name = gets.chomp
-    print 'Enter the second name of the author: '
+    print 'Enter the second name of the writer: '
     last_name = gets.chomp
     author = Author.new(first_name, last_name)
     @authors << author
@@ -49,8 +50,8 @@ module AuthorModule
 
   def add_author
     puts "\nSelect an author form the following list: "
-    puts '[ 1 ] Select from existing authors'
-    puts '[ 2 ] Add a new author'
+    puts '[ 1 ] Select from existing writers'
+    puts '[ 2 ] Add a new writer'
 
     input = gets.chomp.to_i
     until [1, 2].include?(input)

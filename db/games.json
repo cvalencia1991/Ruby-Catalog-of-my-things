@@ -1,0 +1,77 @@
+[
+  {
+    "json_class": "Game",
+    "game_name": "yuioer",
+    "date": "2000-09-09",
+    "multiplayer": true,
+    "last_played_date": "2015-09-09",
+    "archived": true,
+    "id": 782,
+    "author": {
+      "json_class": "Author",
+      "first_name": "abc",
+      "last_name": "def"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "ios",
+      "color": "bcxs",
+      "id": 979
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "we",
+      "id": 823
+    }
+  },
+  {
+    "json_class": "Game",
+    "game_name": "ieo",
+    "date": "2000-09-09",
+    "multiplayer": true,
+    "last_played_date": "2022-09-09",
+    "archived": false,
+    "id": 731,
+    "author": {
+      "json_class": "Author",
+      "first_name": "fd",
+      "last_name": "k"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "l",
+      "color": "k'",
+      "id": 260
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "kdf",
+      "id": 922
+    }
+  },
+  {
+    "json_class": "Game",
+    "game_name": "iis",
+    "date": "2022-09-09",
+    "multiplayer": true,
+    "last_played_date": "2015-09-09",
+    "archived": false,
+    "id": 362,
+    "author": {
+      "json_class": "Author",
+      "first_name": "fd",
+      "last_name": "k"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "kf",
+      "color": "fkd",
+      "id": 765
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "9",
+      "id": 698
+    }
+  }
+]

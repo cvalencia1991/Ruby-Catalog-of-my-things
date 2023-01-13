@@ -1,4 +1,5 @@
 require_relative './items'
+require 'json'
 
 class Label
   attr_accessor :title, :author, :items, :color
@@ -13,5 +14,22 @@ class Label
   def add_item(item)
     @items << item
     item.label = self
+  end
+
+  def as_json()
+    {
+      JSON.create_id => self.class.name,
+      'title' => @title,
+      'color' => @color,
+      'id' => @id
+    }
+  end
+
+  def to_json(*options)
+    as_json.to_json(*options)
+  end
+
+  def self.json_create(object)
+    new(object['title'], object['color'], id: object['id'])
   end
 end

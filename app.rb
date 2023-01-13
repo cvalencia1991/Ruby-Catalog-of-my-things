@@ -1,32 +1,40 @@
-require 'colorize'
-require './src/modules/musicmethod'
-require './src/modules/genremethod'
-require './src/classes/musicalbum'
-require './src/classes/items'
-require './src/classes/genre'
 require_relative './src/modules/game_module'
 require_relative './src/modules/book_module'
-require_relative './src/modules/label_module'
 require_relative './src/modules/genre_module'
+require_relative './src/modules/label_module'
+require_relative './src/modules/music_module'
+require_relative './src/classes/musicalbum'
+require_relative './src/classes/items'
+require_relative './src/classes/genre'
+require_relative './src/storage'
+require 'colorize'
 require 'json'
 
 class App
-  include Methodmusic
-  include Genremethod
-  include GameModule
   include BookModule
   include LabelModule
-  include AuthorModule
   include GenreModule
+  include MusicModule
+  include GameModule
+  include AuthorModule
 
   def initialize
-    @genre = read_genre
-    @musicalbums = read_album
-    @games = read_game
+    @games = []
+    @albums = []
     @labels = []
     @books = []
     @authors = []
     @genres = []
+    load_data
+  end
+
+  def load_data
+    @labels = Storage.load_data('labels')
+    @books = Storage.load_data('books')
+    @genres = Storage.load_data('genres')
+    @albums = Storage.load_data('music_albums')
+    @authors = Storage.load_data('authors')
+    @games = Storage.load_data('games')
   end
 
   def show_menu
@@ -89,5 +97,11 @@ class App
 
   def exit
     puts "Thank you for using the app, see you later!👋  \n\n".blue
+    Storage.save_data('books', @books)
+    Storage.save_data('labels', @labels)
+    Storage.save_data('genres', @genres)
+    Storage.save_data('music_albums', @albums)
+    Storage.save_data('games', @games)
+    Storage.save_data('authors', @authors)
   end
 end

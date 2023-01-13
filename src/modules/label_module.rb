@@ -1,13 +1,14 @@
-require 'colorize'
 require_relative '../classes/label'
 require_relative './book_module'
+require_relative './valid_input'
+require 'colorize'
 
 module LabelModule
   def list_all_labels
     if @labels.empty?
       puts "\nNo labels found in list 🚫 Add some items with labels . . . ".magenta
     else
-      puts "\nAvailable items with labels in the list 🔖 \n"
+      puts "\nAvailable labels in the list 🔖 ⭐ : #{@labels.count} \n".magenta
       @labels.each_with_index do |label, index|
         puts "[#{index + 1}]: Title: #{label.title} | Color: #{label.color}"
       end

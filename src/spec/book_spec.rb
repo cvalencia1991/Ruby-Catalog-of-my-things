@@ -2,9 +2,9 @@ require_relative './spec_helper'
 
 describe Book do
   before :each do
-    @book = Book.new('2000/01/01', 'Wiley', 'good', archived: true, id: rand(1..1000))
-    @book1 = Book.new('2010/01/11', 'Cole', 'cover', id: rand(1..1000))
-    @book2 = Book.new('2022/01/11', 'Cole', 'bad', id: rand(1..1000))
+    @book = Book.new('abc', '2000/01/01', 'Wiley', 'good', archived: true, id: rand(1..1000))
+    @book1 = Book.new('abc', '2010/01/11', 'Cole', 'cover', id: rand(1..1000))
+    @book2 = Book.new('abc', '2022/01/11', 'Cole', 'bad', id: rand(1..1000))
   end
 
   context 'When testing a Book class' do

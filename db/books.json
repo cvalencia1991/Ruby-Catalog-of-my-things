@@ -1,0 +1,27 @@
+[
+  {
+    "json_class": "Book",
+    "title": "fundamental of physics",
+    "date": "2020-09-09",
+    "publisher": "wiley",
+    "cover_state": "good",
+    "archived": false,
+    "id": 81,
+    "author": {
+      "json_class": "Author",
+      "first_name": "abc",
+      "last_name": "def"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "io",
+      "color": "io",
+      "id": 844
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "io",
+      "id": 741
+    }
+  }
+]
