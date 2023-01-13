@@ -9,7 +9,7 @@ module AuthorModule
     else
       puts "Available Authors in the list 👥✍ \n"
       @authors.each_with_index do |author, index|
-        print "[#{index}]: First Name: #{author.first_name} | Last Name: #{author.last_name} \n"
+        print "[#{index + 1}]: First Name: #{author.first_name} | Last Name: #{author.last_name} \n"
       end
     end
   end
@@ -57,7 +57,7 @@ module AuthorModule
   
   def valid_input?(input)
     return true if input == 'back'
-    (0..@genres.length).include?(input.to_i)
+    (1..@genres.length).include?(input.to_i)
   end
 
 
@@ -67,8 +67,8 @@ module AuthorModule
     puts "[ 2 ] Add a new author"
 
     input = gets.chomp.to_i
-    while ![1, 2].include?(input)
-      puts "Invalid input, please enter 1 or 2."
+    until [1, 2].include?(input)
+      puts "Invalid input, please enter 1 or 2 \n"
       input = gets.chomp.to_i
     end
 

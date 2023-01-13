@@ -10,7 +10,7 @@ module GenreModule
     else
       puts "Available Genres in the list 🤹‍♂️ \n"
       @genres.each_with_index do |genre, index|
-        print "[#{index}]: Name: #{genre.name} \n"
+        print "[#{index + 1}]: Name: #{genre.name} \n"
       end
     end
   end
@@ -56,7 +56,7 @@ module GenreModule
   
   def valid_input?(input)
     return true if input == 'back'
-    (0..@genres.length).include?(input.to_i)
+    (1..@genres.length).include?(input.to_i)
   end
 
   def get_genre
@@ -65,8 +65,8 @@ module GenreModule
     puts "[ 2 ] Add a new genre"
 
     input = gets.chomp.to_i
-    while ![1, 2].include?(input)
-      puts "Invalid input, please enter 1 or 2."
+    until [1, 2].include?(input)
+      puts "Invalid input, please enter 1 or 2 \n"
       input = gets.chomp.to_i
     end
 

@@ -9,7 +9,7 @@ module LabelModule
     else
       puts "Available items with labels in the list 🔖 \n"
       @labels.each_with_index do |label, index|
-        puts "[#{index}]: Title: #{label.title} | Color: #{label.color}"
+        puts "[#{index + 1}]: Title: #{label.title} | Color: #{label.color}"
       end
     end
   end
@@ -58,7 +58,7 @@ module LabelModule
   
   def valid_input?(input)
     return true if input == 'back'
-    (0..@genres.length).include?(input.to_i)
+    (1..@genres.length).include?(input.to_i)
   end
 
   def get_book_label
@@ -67,7 +67,7 @@ module LabelModule
     puts '[ 2 ] Create a new label'
 
     input = gets.chomp.to_i
-    until ![1, 2].include?(input)
+    until [1, 2].include?(input)
       puts "Invalid input, please enter 1 or 2 \n"
       input = gets.chomp.to_i
     end
