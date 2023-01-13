@@ -1,0 +1,12 @@
+[
+  {
+    "json_class": "Author",
+    "first_name": "abc",
+    "last_name": "def"
+  },
+  {
+    "json_class": "Author",
+    "first_name": "fd",
+    "last_name": "k"
+  }
+]

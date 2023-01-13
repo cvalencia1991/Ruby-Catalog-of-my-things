@@ -42,11 +42,11 @@ module LabelModule
     @labels[input.to_i - 1]
   end
 
-  # def valid_input?(input)
-  #   return true if input == 'back'
+  def valid_input?(input)
+    return true if input == 'back'
 
-  #   (1..@genres.length).include?(input.to_i)
-  # end
+    (1..@genres.length).include?(input.to_i)
+  end
 
   def add_label
     puts "\nSelect a label for this book or create a new one: "
