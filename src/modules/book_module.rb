@@ -5,7 +5,7 @@ require_relative './genre_module'
 require_relative './valid_date'
 
 module BookModule
-  include LabelModule
+  # include LabelModule
   include AuthorModule
   include GenreModule
 
@@ -26,6 +26,7 @@ module BookModule
     title = gets.chomp
     print 'Enter the publisher of the book: '
     publisher = gets.chomp
+    print 'Enter the publish date of the book e.g (2023-01-11): '
     date = set_valid_date
     print 'Enter the cover state of the book e.g (new, good, acceptable, bad): '
     cover = gets.chomp

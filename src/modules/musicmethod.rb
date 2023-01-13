@@ -26,6 +26,7 @@ module Methodmusic
   def add_music_album
     print 'Enter the name of the album: '
     album_name = gets.chomp
+    print 'Enter the publish date of the music album e.g (2023-01-11): '
     date = set_valid_date
     
     album = MusicAlbum.new(nil, album_name, date)

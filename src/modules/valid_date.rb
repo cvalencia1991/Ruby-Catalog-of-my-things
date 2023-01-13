@@ -24,7 +24,6 @@ def valid_date?(date)
 end
 
 def set_valid_date
-  print 'Enter the publication date e.g (2023-01-11): '
   date = gets.chomp
   until valid_date?(date)
     print "\n🛑 ❌ Invalid date format, please enter a valid date (yyyy-mm-dd): ".red
