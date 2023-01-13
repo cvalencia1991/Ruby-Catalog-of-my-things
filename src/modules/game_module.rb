@@ -84,10 +84,10 @@ module GameModule
       end
     elsif last_played < 2
       puts "\nThe game last played is less than 2 years. It cannot be archved. Game created successfully 🏓 ✅".green
-    else publish_year < 10
+    elsif publish_year < 10
       puts "\nThe game is not older than 10 years. It cannot be archived. GAme created successfully 🏓 ✅".green
-    # else
-    #   puts "\n The game is not older than 10 years"
+    else
+      puts "\n The game is not older than 10 years"
     end
     @games << game
   end

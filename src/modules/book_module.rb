@@ -50,10 +50,11 @@ module BookModule
     puts "\nGenre added for book #{book.title} successfully ⭐ ✅ ".green
   end
 
+  # rubocop:disable Metrics/MethodLength
   def archive_book(book)
     current_date = Date.today
     year = current_date.year - book.publish_date.year
-    
+
     if year > 10 || book.cover_state == 'bad'
       archived = (get_user_input('Do you want to archive this book? (y/n): ', %w[y n]) == 'y')
       book.archived = archived
@@ -74,4 +75,5 @@ module BookModule
     end
     @books << book
   end
+  # rubocop:enable Metrics/MethodLength
 end
