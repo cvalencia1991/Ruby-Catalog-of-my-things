@@ -16,11 +16,11 @@ module GameModule
     if @games.empty?
       puts "No Games to Show 🚫 Please add some Games . . .\n".magenta
     else
-      puts "\nAvailable Games in the list 🏓🎮 . . .\n".magenta
+      puts "\nAvailable Games in the list 🏓 🎮 : #{@games.count} \n".magenta
       @games.each_with_index do |game, index|
-        print "#[#{index + 1}]: Name of Game: #{game.game_name} | Game Writer: #{game.author.first_name} #{game.author.last_name} |"
-        print "Label: #{game.label.title} | Archived: #{game.archived} | Multiplayer: #{game.multiplayer} |"
-        puts "Last played at: #{game.last_played_date} | Publish_date: #{game.publish_date} |  Genre: #{game.genre.name}"
+        print "[ #{index + 1} ]:  Name of Game: #{game.game_name} | Game Writer: #{game.author.first_name} #{game.author.last_name} | "
+        print "Label: #{game.label.title} | Archived: #{game.archived}  | Multiplayer: #{game.multiplayer} |  "
+        puts "Last played at: #{game.last_played_date}  | Publish_date: #{game.publish_date}  | Genre: #{game.genre.name}"
       end
     end
   end

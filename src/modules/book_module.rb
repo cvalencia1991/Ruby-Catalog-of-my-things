@@ -15,11 +15,11 @@ module BookModule
     if @books.empty?
       puts "No Books to Show 🚫 Please add some books . . .\n".magenta
     else
-      puts "\nAvailable Books in the list 📚 . . .\n".magenta
+      puts "\nAvailable Books in the list 📚 📕 : #{@books.count}\n".magenta
       @books.each_with_index do |book, index|
-        print "[#{index + 1}]: Title: #{book.title} ╏ Author: #{book.author.first_name} #{book.author.last_name} | "
-        print "Label: #{book.label.title} | Archived: #{book.archived} ╏ Publisher: #{book.publisher} ╏ "
-        print "Publication_date: #{book.publish_date} ╏ Cover State: #{book.cover_state} ╏ Genre: #{book.genre.name}"
+        print "[ #{index + 1} ]:  Title: #{book.title} | Author: #{book.author.first_name} #{book.author.last_name}  | "
+        print "Label: #{book.label.title} | Archived: #{book.archived}  | Publisher: #{book.publisher} | "
+        puts "Publication_date: #{book.publish_date} | Cover State: #{book.cover_state} | Genre: #{book.genre.name}"
       end
     end
   end

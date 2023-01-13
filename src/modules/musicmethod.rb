@@ -2,7 +2,7 @@ require_relative './genre_module'
 require_relative './authors_module'
 require_relative './label_module'
 require_relative './valid_date'
-# require 'json'
+require 'json'
 require 'colorize'
 require 'date'
 
@@ -15,11 +15,11 @@ module Methodmusic
     if @albums.empty?
       puts "No Albums to Show 🚫 Please add some Music Albums . . .\n".magenta
     else
-      puts "\nAvailable Music Albums in the list 🎵🎧 . . . \n".magenta
+      puts "\nAvailable Music Albums in the list 🎵 🎧 : #{@albums.count} \n".magenta
       @albums.each_with_index do |album, index|
-        print "#[#{index + 1}]:  Music Album: #{album.album_name} | Author: #{album.author.first_name} #{album.author.last_name} |"
-        print "Label: #{album.label.title} | Archived: #{album.archived} ╏"
-        print "On Spotify: #{album.on_spotify} | Publication_date: #{album.publish_date} |  Genre: #{album.genre.name} "
+        print "[ #{index + 1} ]:  Music Album: #{album.album_name} | Author: #{album.author.first_name} #{album.author.last_name} |  "
+        print "Label: #{album.label.title}  | Archived: #{album.archived} | "
+        puts "On Spotify: #{album.on_spotify} | Publication_date: #{album.publish_date} | Genre: #{album.genre.name}"
       end
     end
   end
@@ -38,7 +38,7 @@ module Methodmusic
     author = add_author
     author.add_item(album)
     puts "\nAuthor added for album #{album.album_name} successfully 👤✅".green
-
+    
     label = add_label
     label.add_item(album)
     puts "\nLabel added for album #{album.album_name} successfully 📘✅ ".green
@@ -88,24 +88,4 @@ module Methodmusic
     end
     @albums << album
   end
-
-  # def save_album
-  #   File.open('src/database/musicalbum.json', 'w') do |file|
-  #     album = @musicalbums.each_with_index.map do |alb, _index|
-  #       {
-  #         on_spotify: alb.on_spotify, album: alb.album_name, Date: alb.publish_date, id: alb.id
-  #       }
-  #     end
-  #     file.write(JSON.generate(album))
-  #   end
-  # end
-
-  # def read_album
-  #   return [] unless File.exist?('src/database/musicalbum.json')
-
-  #   musicalbum_json = JSON.parse(File.read('src/database/musicalbum.json'))
-  #   musicalbum_json.map do |album|
-  #     MusicAlbum.new(album['on_spotify'], album['album'], album['Date'])
-  #   end
-  # end
 end
