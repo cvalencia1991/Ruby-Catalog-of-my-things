@@ -2,11 +2,11 @@ require_relative './src/modules/game_module'
 require_relative './src/modules/book_module'
 require_relative './src/modules/genre_module'
 require_relative './src/modules/label_module'
+require_relative './src/modules/music_module'
+require_relative './src/classes/musicalbum'
+require_relative './src/classes/items'
+require_relative './src/classes/genre'
 require_relative './src/storage'
-require './src/modules/musicmethod'
-require './src/classes/musicalbum'
-require './src/classes/items'
-require './src/classes/genre'
 require 'colorize'
 require 'json'
 
@@ -14,7 +14,7 @@ class App
   include BookModule
   include LabelModule
   include GenreModule
-  include Methodmusic
+  include MusicModule
   include GameModule
   include AuthorModule
 

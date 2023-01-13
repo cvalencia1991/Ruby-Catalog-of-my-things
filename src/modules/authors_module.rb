@@ -8,7 +8,7 @@ module AuthorModule
     if @authors.empty?
       puts "\nNo Authors to Show 🚫 Add some authors . . .".magenta
     else
-      puts "\nAvailable Authors in the list 👥✍ . . .\n".magenta
+      puts "\nAvailable Authors in the list 👤 📝 : #{@authors.count} \n".magenta
       @authors.each_with_index do |author, index|
         print "[#{index + 1}]: First Name: #{author.first_name} | Last Name: #{author.last_name} \n"
       end

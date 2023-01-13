@@ -6,7 +6,7 @@ require 'json'
 require 'colorize'
 require 'date'
 
-module Methodmusic
+module MusicModule
   include GenreModule
   include AuthorModule
   include LabelModule
