@@ -4,7 +4,7 @@ require 'json'
 class Label
   attr_accessor :title, :author, :items, :color
 
-  def initialize(title, color)
+  def initialize(title, color, id: nil)
     @id = id.nil? ? Random.rand(1..1000) : id
     @title = title
     @color = color
@@ -22,7 +22,7 @@ class Label
     {
       JSON.create_id => self.class.name,
       'title' => @title,
-      'color' => @color
+      'color' => @color,
       'id' => @id
     }
   end
@@ -32,6 +32,6 @@ class Label
   end
 
   def self.json_create(object)
-    new(object['title'], object['color'], id: object('id'))
+    new(object['title'], object['color'], id: object['id'])
   end
 end
