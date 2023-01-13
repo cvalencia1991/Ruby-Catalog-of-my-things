@@ -88,5 +88,11 @@ class App
 
   def exit
     puts "Thank you for using the app, see you later!👋  \n\n".blue
+    Storage.save_data('books', @books)
+    Storage.save_data('labels', @labels)
+    Storage.save_data('genres', @genres)
+    Storage.save_data('music_albums', @albums)
+    Storage.save_data('games', @games)
+    Storage.save_data('authors', @authors)
   end
 end
