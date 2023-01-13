@@ -17,8 +17,8 @@ module MusicModule
     else
       puts "\nAvailable Music Albums in the list 🎵 🎧 : #{@albums.count} \n".magenta
       @albums.each_with_index do |album, index|
-        print "[ #{index + 1} ]:  Music Album: #{album.album_name} | Author: #{album.author.first_name} #{album.author.last_name} |  "
-        print "Label: #{album.label.title}  | Archived: #{album.archived} | "
+        print "[ #{index + 1} ]:  Music Album: #{album.album_name} | Author: #{album.author.first_name} "
+        print "#{album.author.last_name} |  Label: #{album.label.title}  | Archived: #{album.archived} | "
         puts "On Spotify: #{album.on_spotify} | Publication_date: #{album.publish_date} | Genre: #{album.genre.name}"
       end
     end
@@ -29,16 +29,15 @@ module MusicModule
     album_name = gets.chomp
     print 'Enter the publish date of the music album e.g (2023-01-11): '
     date = set_valid_date
-    
-    album = MusicAlbum.new(nil, album_name, date)
 
+    album = MusicAlbum.new(nil, album_name, date)
 
     archive_album(album)
 
     author = add_author
     author.add_item(album)
     puts "\nAuthor added for album #{album.album_name} successfully 👤✅".green
-    
+
     label = add_label
     label.add_item(album)
     puts "\nLabel added for album #{album.album_name} successfully 📘✅ ".green
@@ -59,15 +58,16 @@ module MusicModule
     input
   end
 
+  # rubocop:disable Metrics/PerceivedComplexity
+  # rubocop:disable Metrics/MethodLength
   def archive_album(album)
-
     on_spotify = (get_user_input('Is the album on Spotify? (y/n): ', %w[y n]) == 'y')
     album.on_spotify = on_spotify
-    
+
     current_date = Date.today
     year = current_date.year - album.publish_date.year
-  
-    if  year > 10 && on_spotify
+
+    if year > 10 && on_spotify
       archived = (get_user_input('Do you want to archive this album? (y/n): ', %w[y n]) == 'y')
       album.archived = archived
       if archived
@@ -83,9 +83,12 @@ module MusicModule
       end
     elsif !on_spotify
       puts "\nThe album is not on Spotify. It cannot be archved. Album created successfully 📕✅".green
-    else !year
+    else
+      # !year
       puts "\nThe album is not older than 10 years. It cannot be archived. Album created successfully 📕✅".green
     end
     @albums << album
   end
+  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/PerceivedComplexity
 end

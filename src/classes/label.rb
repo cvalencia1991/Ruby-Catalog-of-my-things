@@ -16,8 +16,6 @@ class Label
     item.label = self
   end
 
-  public
-
   def as_json()
     {
       JSON.create_id => self.class.name,

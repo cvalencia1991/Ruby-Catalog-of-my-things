@@ -8,7 +8,9 @@ require 'json'
 class Game < Item
   attr_accessor :multiplayer, :last_played_date, :game_name
 
+  # rubocop:disable Metrics/ParameterLists
   def initialize(game_name, date, multiplayer, last_played_date, archived: false, id: nil)
+    # rubocop:enable Metrics/ParameterLists
     super(id, date, archived: archived)
     @game_name = game_name
     @multiplayer = multiplayer
@@ -44,7 +46,8 @@ class Game < Item
   end
 
   def self.json_create(object)
-    album = new(object['game_name'], object['date'], object['multiplayer'], object['last_played_date'], archived: object['archived'], id: object['id'])
+    album = new(object['game_name'], object['date'], object['multiplayer'], object['last_played_date'],
+                archived: object['archived'], id: object['id'])
     author = JSON.parse(JSON.generate(object['author']), create_additions: true)
     label = JSON.parse(JSON.generate(object['label']), create_additions: true)
     genre = JSON.parse(JSON.generate(object['genre']), create_additions: true)

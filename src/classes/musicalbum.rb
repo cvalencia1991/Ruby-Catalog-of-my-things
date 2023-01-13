@@ -41,7 +41,8 @@ class MusicAlbum < Item
   end
 
   def self.json_create(object)
-    album = new(object['on_spotify'], object['album_name'], object['date'], archived: object['archived'], id: object['id'])
+    album = new(object['on_spotify'], object['album_name'], object['date'], archived: object['archived'],
+                                                                            id: object['id'])
     author = JSON.parse(JSON.generate(object['author']), create_additions: true)
     label = JSON.parse(JSON.generate(object['label']), create_additions: true)
     genre = JSON.parse(JSON.generate(object['genre']), create_additions: true)

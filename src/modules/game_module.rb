@@ -18,9 +18,10 @@ module GameModule
     else
       puts "\nAvailable Games in the list 🏓 🎮 : #{@games.count} \n".magenta
       @games.each_with_index do |game, index|
-        print "[ #{index + 1} ]:  Name of Game: #{game.game_name} | Game Writer: #{game.author.first_name} #{game.author.last_name} | "
-        print "Label: #{game.label.title} | Archived: #{game.archived}  | Multiplayer: #{game.multiplayer} |  "
-        puts "Last played at: #{game.last_played_date}  | Publish_date: #{game.publish_date}  | Genre: #{game.genre.name}"
+        print "[ #{index + 1} ]:  Name of Game: #{game.game_name} | Game Writer: #{game.author.first_name} "
+        print "#{game.author.last_name} | Label: #{game.label.title} | Archived: #{game.archived}  | "
+        print "Multiplayer: #{game.multiplayer} |  Last played at: #{game.last_played_date}  | "
+        puts "Publish_date: #{game.publish_date}  | Genre: #{game.genre.name}"
       end
     end
   end
@@ -61,13 +62,14 @@ module GameModule
     input
   end
 
+  # rubocop:disable Metrics/PerceivedComplexity
+  # rubocop:disable Metrics/MethodLength
   def archive_game(game)
-    
     current_date = Date.today
     last_played = current_date.year - game.last_played_date.year
     publish_year = current_date.year - game.publish_date.year
-  
-    if  last_played > 2 && publish_year > 10
+
+    if last_played > 2 && publish_year > 10
       archived = (get_user_input('Do you want to archive this game? (y/n): ', %w[y n]) == 'y')
       game.archived = archived
       if archived
@@ -90,6 +92,8 @@ module GameModule
     end
     @games << game
   end
+  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/PerceivedComplexity
 
   # def save_games
   #   File.open('json_files/games.json', 'w') do |file|
