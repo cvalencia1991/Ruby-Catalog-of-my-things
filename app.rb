@@ -1,15 +1,28 @@
 require 'colorize'
+require './src/modules/musicmethod'
+require './src/modules/genremethod'
+require './src/classes/musicalbum'
+require './src/classes/items'
+require './src/classes/genre'
+require_relative './src/modules/game_module'
 require_relative './src/modules/book_module'
 require_relative './src/modules/label_module'
 require_relative './src/modules/genre_module'
+require 'json'
 
 class App
+  include Methodmusic
+  include Genremethod
+  include GameModule
   include BookModule
   include LabelModule
   include AuthorModule
   include GenreModule
 
   def initialize
+    @genre = read_genre
+    @musicalbums = read_album
+    @games = read_game
     @labels = []
     @books = []
     @authors = []
@@ -32,6 +45,8 @@ class App
     select_option(user_choice)
   end
 
+  # @create_games = create_game
+
   def select_option(user_choice)
     case user_choice
     when 1..6
@@ -53,11 +68,12 @@ class App
   def list_items(user_choice)
     case user_choice
     when 1 then list_all_books
-    when 2 # then list_all_music_albums
-    when 3 # list_all_games
+    when 2 then list_all_music_albums
+    when 3 then list_all_games
     when 4 then list_all_genres
     when 5 then list_all_labels
     when 6 then list_all_authors
+
     end
     show_menu
   end
@@ -65,8 +81,8 @@ class App
   def add_items(user_choice)
     case user_choice
     when 7 then create_book
-    when 8 # then add_music_album
-    when 9 # then add_game
+    when 8 then add_music_album
+    when 9 then add_game
     end
     show_menu
   end
