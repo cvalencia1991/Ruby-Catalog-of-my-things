@@ -90,7 +90,7 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 ```sh
- gem install ruby
+ gem install ruby or sudo gem install ruby
  gem install rspec
  gem install colorize
 ```
@@ -152,13 +152,13 @@ You can deploy this project using:
 
 ## 👥 Authors <a name="authors"></a>
 
--👤 **KanzaTahreem**
+👤 **KanzaTahreem**
 
 - GitHub: [@KanzaTahreem](https://github.com/KanzaTahreem)
 - Twitter: [@kanza_tahreem](https://twitter.com/kanza_tahreem)
 - LinkedIn: [Kanza Tahreem](https://www.linkedin.com/in/kanza-tahreem/)
 
--👤 **Cesar Alberto Valencia Aguilar**
+👤 **Cesar Alberto Valencia Aguilar**
 
 - GitHub: [@cvalencia1991](https://github.com/cvalencia1991](https://github.com/cvalencia1991)
 - Twitter: [@cvalenciaguilar](https://twitter.com/cvalenciaguilar)
@@ -174,7 +174,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- this project could be better if you can see on screen in ruby on rails -**deploy in ruby on rails**
+- This project could be better if you can see on screen in ruby on rails -**deploy in ruby on rails**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
