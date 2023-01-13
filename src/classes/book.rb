@@ -1,4 +1,7 @@
 require_relative './items'
+require_relative './author'
+require_relative './label'
+require_relative './genre'
 require 'json'
 
 class Book < Item
@@ -29,7 +32,10 @@ class Book < Item
       'publisher' => @publisher,
       'cover_state' => @cover_state,
       'archived' => @archived,
-      'id' => @id
+      'id' => @id,
+      'author' => @author,
+      'label' => @label,
+      'genre' => @genre
     }
   end
 
@@ -39,5 +45,12 @@ class Book < Item
 
   def self.json_create(object)
     album = new(object['title'], object['date'], object['publisher'], object['cover_state'],  archived: object['archived'], id: object['id'])
+    author = JSON.parse(JSON.generate(object['author']), create_additions: true)
+    label = JSON.parse(JSON.generate(object['label']), create_additions: true)
+    genre = JSON.parse(JSON.generate(object['genre']), create_additions: true)
+    author.add_item(album)
+    label.add_item(album)
+    genre.add_item(album)
+    album
   end
 end
