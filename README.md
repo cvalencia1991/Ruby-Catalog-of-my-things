@@ -152,6 +152,12 @@ You can deploy this project using:
 
 ## 👥 Authors <a name="authors"></a>
 
+-👤 **KanzaTahreem**
+
+- GitHub: [@KanzaTahreem](https://github.com/KanzaTahreem)
+- Twitter: [@kanza_tahreem](https://twitter.com/kanza_tahreem)
+- LinkedIn: [Kanza Tahreem](https://www.linkedin.com/in/kanza-tahreem/)
+
 -👤 **Cesar Alberto Valencia Aguilar**
 
 - GitHub: [@cvalencia1991](https://github.com/cvalencia1991](https://github.com/cvalencia1991)
@@ -202,7 +208,7 @@ I would like to thank for the group project, all great effort get award
 
 - **could you deploy this project in any other language?**
 
-  -yes, ou can deploy this project using any other back end language
+  - Yes, ou can deploy this project using any other back end language
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
