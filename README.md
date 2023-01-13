@@ -18,6 +18,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [images](#images)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -37,7 +38,6 @@
 
 # 📖 Catalog of my things <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
 
 This is a interface to interact and deploy and add  books, albums and games also it deploys in the screen
 
@@ -70,16 +70,22 @@ This is a interface to interact and deploy and add  books, albums and games also
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
+
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Live Demo Link](this project doens't have live demo link)
+- this project doens't have live demo link
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+## 🖼️ images <a name="images"></a>
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
