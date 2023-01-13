@@ -31,8 +31,8 @@ module BookModule
     cover = gets.chomp
 
     book = Book.new(title, date, publisher, cover)
-    archive_book(book)  
-  
+    archive_book(book)
+
     author = get_author
     author.add_item(book)
     puts "Author added for book #{book.title} successfully 👤✅"
@@ -50,13 +50,12 @@ module BookModule
     while true
       print 'Do you want to archive this book? (y/n): '
       archive_choice = gets.chomp
-      if archive_choice == 'y' || archive_choice == 'n'
-        break
-      else
-        puts 'Invalid input, please enter y or n'
-      end
+      break if %w[y n].include?(archive_choice)
+
+      puts 'Invalid input, please enter y or n'
+
     end
-  
+
     archived = (archive_choice == 'y')
     book.archived = archived
     if archived
@@ -64,25 +63,24 @@ module BookModule
         while true
           print 'Do you want to confirm archiving this bookkkkkkkkk (y/n): '
           confirm = gets.chomp
-          if confirm == 'y' || confirm == 'n'
-            break
-          else
-            puts 'Invalid input, please enter y or n'
-          end
+          break if %w[y n].include?(confirm)
+
+          puts 'Invalid input, please enter y or n'
+
         end
+        @books << book
         if confirm == 'y'
-          @books << book
-          puts "Book created and archived successfully 📕✅"
+          puts 'Book created and archived successfully 📕✅'
         else
-          @books << book
-          puts "Book not archived but created successfully 📕✅"
+          book.archived = false
+          puts 'Book not archived but created successfully 📕✅'
         end
       else
-        puts "The book is not old enough to be archived"
+        puts 'The book is not old enough to be archived'
       end
     else
       @books << book
-      puts "Book created successfully 📕✅"
+      puts 'Book created successfully 📕✅'
     end
   end
 end
