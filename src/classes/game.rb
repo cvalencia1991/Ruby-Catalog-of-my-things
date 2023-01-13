@@ -1,3 +1,6 @@
+require_relative './author'
+require_relative './label'
+require_relative './genre'
 require 'date'
 require 'json'
 
@@ -27,7 +30,10 @@ class Game < Item
       'album_name' => @album_name,
       'date' => @publish_date,
       'archived' => @archived,
-      'id' => @id
+      'id' => @id,
+      'author' => @author,
+      'label' => @label,
+      'genre' => @genre
     }
   end
 
@@ -37,5 +43,12 @@ class Game < Item
 
   def self.json_create(object)
     album = new(object['on_spotify'], object['album_name'], object['date'], archived: object['archived'], id: object['id'])
+    author = JSON.parse(JSON.generate(object['author']), create_additions: true)
+    label = JSON.parse(JSON.generate(object['label']), create_additions: true)
+    genre = JSON.parse(JSON.generate(object['genre']), create_additions: true)
+    author.add_item(album)
+    label.add_item(album)
+    genre.add_item(album)
+    album
   end
 end
