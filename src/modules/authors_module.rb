@@ -1,4 +1,3 @@
-require_relative './valid_input'
 require_relative '../classes/author'
 require 'colorize'
 require 'date'

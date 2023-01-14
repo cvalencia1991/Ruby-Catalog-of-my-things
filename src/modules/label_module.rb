@@ -1,6 +1,5 @@
 require_relative '../classes/label'
 require_relative './book_module'
-require_relative './valid_input'
 require 'colorize'
 
 module LabelModule

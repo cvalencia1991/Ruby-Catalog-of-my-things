@@ -1,5 +1,4 @@
 require_relative '../classes/genre'
-require_relative './valid_input'
 require 'colorize'
 require 'date'
 

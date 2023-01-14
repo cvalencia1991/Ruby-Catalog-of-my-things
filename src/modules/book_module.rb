@@ -3,7 +3,6 @@ require_relative './label_module'
 require_relative './authors_module'
 require_relative './genre_module'
 require_relative './valid_date'
-require_relative './valid_input'
 require 'colorize'
 require 'date'
 
