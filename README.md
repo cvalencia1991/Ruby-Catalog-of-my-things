@@ -79,9 +79,6 @@ This project involves creating a console application that allows users to keep t
 
 <!-- GETTING STARTED -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
