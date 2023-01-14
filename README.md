@@ -1,54 +1,47 @@
 <a name="readme-top"></a>
 
-<div align="center">
-
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Catalog of my things Ruby Capstone </b></h3>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-  - [images](#images)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
-- [📝 License](#license)
+- [� Table of Contents](#-table-of-contents)
+- [📖 Catalog of my things ](#-catalog-of-my-things-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [🖼️ images ](#️-images-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Deployment](#deployment)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ ](#-faq-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 Catalog of my things <a name="about-project"></a>
 
 
-This is a interface to interact and deploy and add  books, albums and games also it deploys in the screen
+This project involves creating a console application that allows users to keep track of their personal collection of books, music albums, and games. The program is structured according to the [UML class diagram](./src/images/catalog_of_my_things.png). The data is stored in JSON files and a database is also set up with tables that match the class structure of the program
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Backend</summary>
+  <summary>Server Side</summary>
   <ul>
-    <li><a href="https://reactjs.org/">Ruby</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://www.json.org/">Json</a></li>
   </ul>
 </details>
 
@@ -64,18 +57,24 @@ This is a interface to interact and deploy and add  books, albums and games also
 ### Key Features <a name="key-features"></a>
 
 
-- **Modules and blocks can be refactored into more accessible methods**
-- **Interact with many clases in the intreaction of the aplication**
-- **Use squema to add create the Database**
+- **List all books**
+- **List all music albums**
+- **List of games**
+- **List all genres (e.g 'Comedy', 'Thriller')**
+- **List all labels (e.g. 'Gift', 'New')**
+- **List all authors (e.g. 'Stephen King')**
+- **Add a book**
+- **Add a music album**
+- **Add a game**
+- **Preserve data in JSON files**
+- **Created a console app**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-
-- this project doens't have live demo link
+- [Not available !]()
+- However, if you  want to have a glimpse of our project, [here it is](./src//images/console_app.PNG)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
