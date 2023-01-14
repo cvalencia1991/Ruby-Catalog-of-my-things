@@ -1,55 +1,46 @@
 <a name="readme-top"></a>
 
-<div align="center">
-
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Catalog of my things Ruby Capstone </b></h3>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-  - [🖼️ images](#images)
-  - [🎥 video](#images)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Catalog of my things ](#-catalog-of-my-things-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Deployment](#deployment)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ ](#-faq-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 Catalog of my things <a name="about-project"></a>
 
 
-This is a interface to interact and deploy and add  books, albums and games also it deploys in the screen
+This project involves creating a console application that allows users to keep track of their personal collection of books, music albums, and games. The program is structured according to the [UML class diagram](./src/images/catalog_of_my_things.png). The data is stored in JSON files and a database is also set up with tables that match the class structure of the program
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Backend</summary>
+  <summary>Server Side</summary>
   <ul>
-    <li><a href="https://reactjs.org/">Ruby</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://www.json.org/">Json</a></li>
   </ul>
 </details>
 
@@ -65,37 +56,28 @@ This is a interface to interact and deploy and add  books, albums and games also
 ### Key Features <a name="key-features"></a>
 
 
-- **Modules and blocks can be refactored into more accessible methods**
-- **Interact with many clases in the intreaction of the aplication**
-- **Use squema to add create the Database**
+- **List all books**
+- **List all music albums**
+- **List of games**
+- **List all genres (e.g 'Comedy', 'Thriller')**
+- **List all labels (e.g. 'Gift', 'New')**
+- **List all authors (e.g. 'Stephen King')**
+- **Add a book**
+- **Add a music album**
+- **Add a game**
+- **Preserve data in JSON files**
+- **Created a console app**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-
-- this project doens't have live demo link
+- [Video Presentation](https://drive.google.com/file/d/13-B45_cwSHZzMrKYeY-2BehYVFYm5_Jb/view?usp=sharing)
+- If you  want to have a glimpse of our project, [here it is](./src//images/console_app.PNG)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
-## 🖼️ images <a name="images"></a>
-
-![image](https://user-images.githubusercontent.com/107327344/212416171-5fe2b8d4-4182-46a1-ba8d-6908798606e9.png)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🎥 video <a name="video"></a>
-
-
-
-https://user-images.githubusercontent.com/107327344/212428868-84865c1a-0a05-4518-a2c7-4227fdc0ab75.mp4
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -157,9 +139,8 @@ To run tests, run the following command:
 
 You can deploy this project using:
 
-
 ```sh
-    ruby main.rb
+  ruby main.rb
 ```
 
 
@@ -168,7 +149,7 @@ You can deploy this project using:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **KanzaTahreem**
+👤 **Kanza ahreem**
 
 - GitHub: [@KanzaTahreem](https://github.com/KanzaTahreem)
 - Twitter: [@kanza_tahreem](https://twitter.com/kanza_tahreem)
@@ -176,11 +157,11 @@ You can deploy this project using:
 
 👤 **Cesar Alberto Valencia Aguilar**
 
-- GitHub: [@cvalencia1991](https://github.com/cvalencia1991](https://github.com/cvalencia1991)
+- GitHub: [@cvalencia1991](https://github.com/cvalencia1991)
 - Twitter: [@cvalenciaguilar](https://twitter.com/cvalenciaguilar)
 - LinkedIn: [@cvalencia1991](https://www.linkedin.com/in/cvalenciaguilar/)
 
-👤 **shakerAbuDrais**
+👤 **Shaker AbuDrais**
 
 - GitHub: [@Shaker](https://github.com/shakerAbuDrais/)
 - LinkedIn: [Shaker](https://www.linkedin.com/in/shaker-abady/)
@@ -190,7 +171,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- This project could be better if you can see on screen in ruby on rails -**deploy in ruby on rails**
+- **List all movies**
+- **List all sources (e.g. 'From a friend', 'Online shop')**
+- **Add a movie**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,4 +1,3 @@
-# require 'json'
 require_relative '../classes/game'
 require_relative './authors_module'
 require_relative './genre_module'
@@ -14,7 +13,7 @@ module GameModule
 
   def list_all_games
     if @games.empty?
-      puts "No Games to Show 🚫 Please add some Games . . .\n".magenta
+      puts "\nNo Games to Show 🚫 Please add some Games . . .".magenta
     else
       puts "\nAvailable Games in the list 🏓 🎮 : #{@games.count} \n".magenta
       @games.each_with_index do |game, index|
@@ -40,15 +39,15 @@ module GameModule
 
     author = add_author
     author.add_item(game)
-    puts "\nWriter added for game #{game.game_name} successfully 👤✅".green
+    puts "\nAuthor added for game #{game.game_name} successfully 👤 ✅".green
 
     label = add_label
     label.add_item(game)
-    puts "\nLabel added for game #{game.game_name} successfully 📘✅ ".green
+    puts "\nLabel added for game #{game.game_name} successfully 📘 ✅ ".green
 
     genre = add_genre
     genre.add_item(game)
-    puts "\nGenre added for game #{game.game_name} successfully 🤹‍♂️✅ ".green
+    puts "\nGenre added for game #{game.game_name} successfully ⭐ ✅ ".green
   end
 
   def get_user_input(prompt, valid_responses)
@@ -75,18 +74,18 @@ module GameModule
       if archived
         if get_user_input('Do you want to confirm archiving this game (y/n): ', %w[y n]) == 'y'
           game.move_to_archive
-          puts "\nGame archived and created successfully 📕✅ ".green
+          puts "\nGame archived and created successfully 🏓 ✅ ".green
         else
           game.archived = false
-          puts "\nGame not archived but created successfully 📕✅ ".green
+          puts "\nGame not archived but created successfully 🏓 ✅ ".green
         end
       else
-        puts "\nGame created successfully 📕✅".green
+        puts "\nGame created successfully 🏓 ✅".green
       end
     elsif last_played < 2
-      puts "\nThe game last played is less than 2 years. It cannot be archved. Game created successfully 📕✅".green
+      puts "\nThe game last played is less than 2 years. It cannot be archved. Game created successfully 🏓 ✅".green
     elsif publish_year < 10
-      puts "\nThe game is not older than 10 years. It cannot be archived. GAme created successfully 📕✅".green
+      puts "\nThe game is not older than 10 years. It cannot be archived. GAme created successfully 🏓 ✅".green
     else
       puts "\n The game is not older than 10 years"
     end
@@ -94,25 +93,4 @@ module GameModule
   end
   # rubocop:enable Metrics/MethodLength
   # rubocop:enable Metrics/PerceivedComplexity
-
-  # def save_games
-  #   File.open('json_files/games.json', 'w') do |file|
-  #     game = @games.each_with_index.map do |gam, _index|
-  #       {
-  #         publish_date: gam.publish_date, multiplayer: gam.multiplayer, last_played_date: gam.last_played_date
-  #       }
-  #     end
-  #     file.write(JSON.generate(game))
-  #   end
-  # end
-
-  # def read_game
-  #   return [] unless File.exist?('json_files/games.json')
-  #   return [] if File.open('json_files/games.json', &:size).zero?
-
-  #   game_json = JSON.parse(File.read('json_files/games.json'))
-  #   game_json.map do |game|
-  #     Game.new(game['publish_date'], game['multiplayer'], game['last_played_date'])
-  #   end
-  # end
 end

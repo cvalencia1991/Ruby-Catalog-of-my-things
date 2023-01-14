@@ -13,7 +13,7 @@ module MusicModule
 
   def list_all_music_albums
     if @albums.empty?
-      puts "No Albums to Show 🚫 Please add some Music Albums . . .\n".magenta
+      puts "\nNo Albums to Show 🚫 Please add some Music Albums . . .".magenta
     else
       puts "\nAvailable Music Albums in the list 🎵 🎧 : #{@albums.count} \n".magenta
       @albums.each_with_index do |album, index|
@@ -25,7 +25,7 @@ module MusicModule
   end
 
   def add_music_album
-    print 'Enter the name of the album: '
+    print 'Enter the name of the music album: '
     album_name = gets.chomp
     print 'Enter the publish date of the music album e.g (2023-01-11): '
     date = set_valid_date
@@ -61,31 +61,30 @@ module MusicModule
   # rubocop:disable Metrics/PerceivedComplexity
   # rubocop:disable Metrics/MethodLength
   def archive_album(album)
-    on_spotify = (get_user_input('Is the album on Spotify? (y/n): ', %w[y n]) == 'y')
+    on_spotify = (get_user_input('Is the music album on Spotify? (y/n): ', %w[y n]) == 'y')
     album.on_spotify = on_spotify
 
     current_date = Date.today
     year = current_date.year - album.publish_date.year
 
     if year > 10 && on_spotify
-      archived = (get_user_input('Do you want to archive this album? (y/n): ', %w[y n]) == 'y')
+      archived = (get_user_input('Do you want to archive this music album? (y/n): ', %w[y n]) == 'y')
       album.archived = archived
       if archived
         if get_user_input('Do you want to confirm archiving this album (y/n): ', %w[y n]) == 'y'
           album.move_to_archive
-          puts "\nAlbum archived and created successfully 📕✅ ".green
+          puts "\nMusic album archived and created successfully 🎵 ✅ ".green
         else
           album.archived = false
-          puts "\nAlbum not archived but created successfully 📕✅ ".green
+          puts "\nMusic album not archived but created successfully 🎵 ✅ ".green
         end
       else
-        puts "\nAlbum created successfully 📕✅".green
+        puts "\nMusic album created successfully 🎵 ✅".green
       end
     elsif !on_spotify
-      puts "\nThe album is not on Spotify. It cannot be archved. Album created successfully 📕✅".green
+      puts "\nThe music album is not on Spotify. It cannot be archved. Album created successfully 🎵 ✅".green
     else
-      # !year
-      puts "\nThe album is not older than 10 years. It cannot be archived. Album created successfully 📕✅".green
+      puts "\nThe music album is not older than 10 years. It cannot be archived. Album created successfully 🎵 ✅".green
     end
     @albums << album
   end

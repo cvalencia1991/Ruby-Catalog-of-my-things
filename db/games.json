@@ -1,77 +1,52 @@
 [
   {
     "json_class": "Game",
-    "game_name": "yuioer",
-    "date": "2000-09-09",
+    "game_name": "Minecraft",
+    "date": "2011-11-08",
     "multiplayer": true,
-    "last_played_date": "2015-09-09",
+    "last_played_date": "2011-11-08",
     "archived": true,
-    "id": 782,
+    "id": 117,
     "author": {
       "json_class": "Author",
-      "first_name": "abc",
-      "last_name": "def"
+      "first_name": "Markus",
+      "last_name": "Notch"
     },
     "label": {
       "json_class": "Label",
-      "title": "ios",
-      "color": "bcxs",
-      "id": 979
+      "title": "game",
+      "color": "purple",
+      "id": 975
     },
     "genre": {
       "json_class": "Genre",
-      "name": "we",
-      "id": 823
+      "name": "sandbox survival",
+      "id": 728
     }
   },
   {
     "json_class": "Game",
-    "game_name": "ieo",
-    "date": "2000-09-09",
+    "game_name": "Pubg",
+    "date": "2017-03-23",
     "multiplayer": true,
-    "last_played_date": "2022-09-09",
+    "last_played_date": "2017-03-23",
     "archived": false,
-    "id": 731,
+    "id": 856,
     "author": {
       "json_class": "Author",
-      "first_name": "fd",
-      "last_name": "k"
+      "first_name": "Brendan",
+      "last_name": "Greene"
     },
     "label": {
       "json_class": "Label",
-      "title": "l",
-      "color": "k'",
-      "id": 260
+      "title": "game",
+      "color": "black",
+      "id": 305
     },
     "genre": {
       "json_class": "Genre",
-      "name": "kdf",
-      "id": 922
-    }
-  },
-  {
-    "json_class": "Game",
-    "game_name": "iis",
-    "date": "2022-09-09",
-    "multiplayer": true,
-    "last_played_date": "2015-09-09",
-    "archived": false,
-    "id": 362,
-    "author": {
-      "json_class": "Author",
-      "first_name": "fd",
-      "last_name": "k"
-    },
-    "label": {
-      "json_class": "Label",
-      "title": "kf",
-      "color": "fkd",
-      "id": 765
-    },
-    "genre": {
-      "json_class": "Genre",
-      "name": "9",
-      "id": 698
+      "name": "battle royale ",
+      "id": 510
     }
   }
 ]

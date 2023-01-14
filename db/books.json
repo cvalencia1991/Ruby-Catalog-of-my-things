@@ -1,27 +1,52 @@
 [
   {
     "json_class": "Book",
-    "title": "fundamental of physics",
-    "date": "2020-09-09",
-    "publisher": "wiley",
-    "cover_state": "good",
-    "archived": false,
-    "id": 81,
+    "title": "Physics for scientists and engineers",
+    "date": "1988-09-05",
+    "publisher": "Coli",
+    "cover_state": "acceptable",
+    "archived": true,
+    "id": 422,
     "author": {
       "json_class": "Author",
-      "first_name": "abc",
-      "last_name": "def"
+      "first_name": "Douglas",
+      "last_name": "Giancoli"
     },
     "label": {
       "json_class": "Label",
-      "title": "io",
-      "color": "io",
-      "id": 844
+      "title": "book",
+      "color": "cyan",
+      "id": 843
     },
     "genre": {
       "json_class": "Genre",
-      "name": "io",
-      "id": 741
+      "name": "Textbook",
+      "id": 720
+    }
+  },
+  {
+    "json_class": "Book",
+    "title": "Fundamental of Physics",
+    "date": "1933-03-08",
+    "publisher": "Wiley",
+    "cover_state": "acceptable",
+    "archived": false,
+    "id": 703,
+    "author": {
+      "json_class": "Author",
+      "first_name": "David",
+      "last_name": "Halliday"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "book",
+      "color": "orange",
+      "id": 816
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "Textbook",
+      "id": 720
     }
   }
 ]

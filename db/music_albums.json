@@ -1,3 +1,50 @@
 [
-
+  {
+    "json_class": "MusicAlbum",
+    "on_spotify": true,
+    "album_name": "Nevermind",
+    "date": "1991-09-24",
+    "archived": true,
+    "id": 144,
+    "author": {
+      "json_class": "Author",
+      "first_name": "Mark",
+      "last_name": "Lindquist"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "music",
+      "color": "black",
+      "id": 747
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "grunge",
+      "id": 98
+    }
+  },
+  {
+    "json_class": "MusicAlbum",
+    "on_spotify": true,
+    "album_name": "Rumours",
+    "date": "1977-02-04",
+    "archived": false,
+    "id": 331,
+    "author": {
+      "json_class": "Author",
+      "first_name": "Anna",
+      "last_name": "Godbersen"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "music",
+      "color": "red",
+      "id": 117
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "rock",
+      "id": 518
+    }
+  }
 ]
