@@ -1,0 +1,38 @@
+[
+  {
+    "json_class": "Label",
+    "title": "book",
+    "color": "cyan",
+    "id": 843
+  },
+  {
+    "json_class": "Label",
+    "title": "book",
+    "color": "orange",
+    "id": 816
+  },
+  {
+    "json_class": "Label",
+    "title": "music",
+    "color": "black",
+    "id": 747
+  },
+  {
+    "json_class": "Label",
+    "title": "music",
+    "color": "red",
+    "id": 117
+  },
+  {
+    "json_class": "Label",
+    "title": "game",
+    "color": "purple",
+    "id": 975
+  },
+  {
+    "json_class": "Label",
+    "title": "game",
+    "color": "black",
+    "id": 305
+  }
+]

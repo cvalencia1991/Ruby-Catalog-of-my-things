@@ -1,0 +1,27 @@
+[
+  {
+    "json_class": "Genre",
+    "name": "Textbook",
+    "id": 720
+  },
+  {
+    "json_class": "Genre",
+    "name": "grunge",
+    "id": 98
+  },
+  {
+    "json_class": "Genre",
+    "name": "rock",
+    "id": 518
+  },
+  {
+    "json_class": "Genre",
+    "name": "sandbox survival",
+    "id": 728
+  },
+  {
+    "json_class": "Genre",
+    "name": "battle royale ",
+    "id": 510
+  }
+]

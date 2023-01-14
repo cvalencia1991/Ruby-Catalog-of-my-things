@@ -1,0 +1,52 @@
+[
+  {
+    "json_class": "Book",
+    "title": "Physics for scientists and engineers",
+    "date": "1988-09-05",
+    "publisher": "Coli",
+    "cover_state": "acceptable",
+    "archived": true,
+    "id": 422,
+    "author": {
+      "json_class": "Author",
+      "first_name": "Douglas",
+      "last_name": "Giancoli"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "book",
+      "color": "cyan",
+      "id": 843
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "Textbook",
+      "id": 720
+    }
+  },
+  {
+    "json_class": "Book",
+    "title": "Fundamental of Physics",
+    "date": "1933-03-08",
+    "publisher": "Wiley",
+    "cover_state": "acceptable",
+    "archived": false,
+    "id": 703,
+    "author": {
+      "json_class": "Author",
+      "first_name": "David",
+      "last_name": "Halliday"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "book",
+      "color": "orange",
+      "id": 816
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "Textbook",
+      "id": 720
+    }
+  }
+]

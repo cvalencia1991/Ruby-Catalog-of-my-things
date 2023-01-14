@@ -1,0 +1,52 @@
+[
+  {
+    "json_class": "Game",
+    "game_name": "Minecraft",
+    "date": "2011-11-08",
+    "multiplayer": true,
+    "last_played_date": "2011-11-08",
+    "archived": true,
+    "id": 117,
+    "author": {
+      "json_class": "Author",
+      "first_name": "Markus",
+      "last_name": "Notch"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "game",
+      "color": "purple",
+      "id": 975
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "sandbox survival",
+      "id": 728
+    }
+  },
+  {
+    "json_class": "Game",
+    "game_name": "Pubg",
+    "date": "2017-03-23",
+    "multiplayer": true,
+    "last_played_date": "2017-03-23",
+    "archived": false,
+    "id": 856,
+    "author": {
+      "json_class": "Author",
+      "first_name": "Brendan",
+      "last_name": "Greene"
+    },
+    "label": {
+      "json_class": "Label",
+      "title": "game",
+      "color": "black",
+      "id": 305
+    },
+    "genre": {
+      "json_class": "Genre",
+      "name": "battle royale ",
+      "id": 510
+    }
+  }
+]

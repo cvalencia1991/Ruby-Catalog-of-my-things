@@ -1,0 +1,32 @@
+[
+  {
+    "json_class": "Author",
+    "first_name": "Douglas",
+    "last_name": "Giancoli"
+  },
+  {
+    "json_class": "Author",
+    "first_name": "David",
+    "last_name": "Halliday"
+  },
+  {
+    "json_class": "Author",
+    "first_name": "Mark",
+    "last_name": "Lindquist"
+  },
+  {
+    "json_class": "Author",
+    "first_name": "Anna",
+    "last_name": "Godbersen"
+  },
+  {
+    "json_class": "Author",
+    "first_name": "Markus",
+    "last_name": "Notch"
+  },
+  {
+    "json_class": "Author",
+    "first_name": "Brendan",
+    "last_name": "Greene"
+  }
+]
