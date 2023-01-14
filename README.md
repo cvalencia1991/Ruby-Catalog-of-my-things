@@ -4,13 +4,12 @@
 
 # 📗 Table of Contents
 
-- [� Table of Contents](#-table-of-contents)
+- [📗 Table of Contents](#-table-of-contents)
 - [📖 Catalog of my things ](#-catalog-of-my-things-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
-  - [🖼️ images ](#️-images-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -79,9 +78,6 @@ This project involves creating a console application that allows users to keep t
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
-## 🖼️ images <a name="images"></a>
-
-![image](https://user-images.githubusercontent.com/107327344/212416171-5fe2b8d4-4182-46a1-ba8d-6908798606e9.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,9 +142,8 @@ To run tests, run the following command:
 
 You can deploy this project using:
 
-
 ```sh
-    ruby main.rb
+  ruby main.rb
 ```
 
 
@@ -157,7 +152,7 @@ You can deploy this project using:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **KanzaTahreem**
+👤 **Kanza ahreem**
 
 - GitHub: [@KanzaTahreem](https://github.com/KanzaTahreem)
 - Twitter: [@kanza_tahreem](https://twitter.com/kanza_tahreem)
@@ -165,11 +160,11 @@ You can deploy this project using:
 
 👤 **Cesar Alberto Valencia Aguilar**
 
-- GitHub: [@cvalencia1991](https://github.com/cvalencia1991](https://github.com/cvalencia1991)
+- GitHub: [@cvalencia1991](https://github.com/cvalencia1991)
 - Twitter: [@cvalenciaguilar](https://twitter.com/cvalenciaguilar)
 - LinkedIn: [@cvalencia1991](https://www.linkedin.com/in/cvalenciaguilar/)
 
-👤 **shakerAbuDrais**
+👤 **Shaker AbuDrais**
 
 - GitHub: [@Shaker](https://github.com/shakerAbuDrais/)
 - LinkedIn: [Shaker](https://www.linkedin.com/in/shaker-abady/)
@@ -179,7 +174,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- This project could be better if you can see on screen in ruby on rails -**deploy in ruby on rails**
+- **List all movies**
+- **List all sources (e.g. 'From a friend', 'Online shop')**
+- **Add a movie**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
